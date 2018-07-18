@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 class Hexa {
 	public int hexdec(String str) {
 		int value=0;
