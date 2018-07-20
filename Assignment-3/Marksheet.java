@@ -1,5 +1,6 @@
 import java.util.Scanner;
-class Functions {
+
+class GradeCalculator {
 	private double[] marks;
 	private int size;
 	
@@ -7,7 +8,7 @@ class Functions {
 	 * This constructor for taking number of students
 	 * @param size > 0
 	 */
-	public Functions(int size) {
+	public GradeCalculator(int size) {
 		this.size=size;
 	}
 	
@@ -66,7 +67,7 @@ class Functions {
 	 * @return percentage of students passed
 	 * @throws ArithmeticException, if user has entered wrong values
 	 */
-	public double percentage_passed(double[] marks ) throws ArithmeticException {
+	public double percentagePassed(double[] marks ) throws ArithmeticException {
 		this.marks=marks;
 		double count=0.0;
 		double percentage;
@@ -86,7 +87,7 @@ public class Marksheet {
 		int size;
 		System.out.println("Enter size of students"); 
 		size=input.nextInt();
-		Functions object=new Functions(size);
+		GradeCalculator object=new GradeCalculator(size);
 		
 		double[] marks=new double[size];
 		
@@ -122,7 +123,7 @@ public class Marksheet {
 				}
 				case 4: {
 					double output;
-					output=object.percentage_passed(marks);
+					output=object.percentagePassed(marks);
 					System.out.printf(" Percentage passed : %.2f \n", output);
 					break;
 				}
