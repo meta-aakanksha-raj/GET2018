@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Operations {
 	/**
 	 * To input string which is case sensitive, it should not be null
@@ -11,7 +12,7 @@ class Operations {
 	}
 	
 	/**
-	 * To compare two string whether they are equal or not	
+	 * To compare two string whether they are equal or not
 	 * @param firstString is first user input string
 	 * @param secondString is second user input string
 	 * @return 1 if both strings are equal else returns 0
