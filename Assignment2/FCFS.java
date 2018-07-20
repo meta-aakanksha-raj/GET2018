@@ -1,4 +1,5 @@
 import java.util.*;
+
 class Process {
 	private int size;
 	private int process_id[];
@@ -100,4 +101,3 @@ public class FCFS {
 		obj.display(max);	    
 	}
 }
-	
