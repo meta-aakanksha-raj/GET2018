@@ -2,6 +2,7 @@ import java.util.Scanner;
 class Functions {
 	private double[] marks;
 	private int size;
+	
 	/**
 	 * This constructor for taking number of students
 	 * @param size > 0
@@ -15,6 +16,7 @@ class Functions {
 	 * @return average of marks
 	 * @throws ArithmeticException, if user has entered wrong values
 	 */
+	
 	public double average(double[] marks ) throws ArithmeticException {
 		this.marks=marks;
 		double sum=0.0;
@@ -29,6 +31,7 @@ class Functions {
 	 * @return maximum of marks
 	 * @throws ArithmeticException, if user has entered wrong values
 	 */
+	
 	public double maximum(double[] marks ) throws ArithmeticException {
 		this.marks=marks;
 		double max=0.0;
@@ -45,6 +48,7 @@ class Functions {
 	 * @return minimum of marks
 	 * @throws ArithmeticException, if user has entered wrong values
 	 */
+	
 	public double minimum(double[] marks ) throws ArithmeticException {
 		this.marks=marks;
 		double min=100.0;
@@ -55,6 +59,7 @@ class Functions {
 		}
 		return min;
 	}
+	
 	/**
 	 * This function gives percentage of students who have scored marks>=40
 	 * @param marks should be between 0 and 100 both
