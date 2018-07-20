@@ -9,6 +9,7 @@ class Operations {
 		String inputUser = scan.nextLine();
 		return inputUser;
 	}
+	
 	/**
 	 * To compare two string whether they are equal or not	
 	 * @param firstString is first user input string
@@ -27,6 +28,7 @@ class Operations {
 		}
 		return 1;
 	}
+	
 	/**
 	 * To reverse a string
 	 * @param inputString is string which user want to reverse
@@ -39,6 +41,7 @@ class Operations {
 		}
 		return reversedString;
 	}
+	
 	/**
 	 * Replaces lowercase letters with uppercase and vice versa 
 	 * @param inputString is string which user want to change case
@@ -59,6 +62,7 @@ class Operations {
 		}
 		return changedString;
 	}
+	
 	/**
 	 * finds largest word if two words are same then return the last one
 	 * @param inputString is string in which user want to find largest word
