@@ -1,6 +1,7 @@
 import java.util.Scanner;
 class Shapes {
 	private double result;
+	
 	/**
 	 * This function gives area of triangle
 	 * @param width > 0
@@ -8,7 +9,6 @@ class Shapes {
 	 * @return area of triangle in double
 	 * @throws ArithmeticException, if user has entered wrong values
 	 */
-	
 	public double traingle(double width,double height) throws ArithmeticException {
 		double base_traingle=width;
 		double height_traingle=height;
