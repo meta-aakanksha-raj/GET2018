@@ -8,6 +8,7 @@ class Shapes {
 	 * @return area of triangle in double
 	 * @throws ArithmeticException, if user has entered wrong values
 	 */
+	
 	public double traingle(double width,double height) throws ArithmeticException {
 		double base_traingle=width;
 		double height_traingle=height;
@@ -15,6 +16,7 @@ class Shapes {
 		area=0.5*base_traingle*height_traingle;   
 		return area;
 	}
+	
 	/**
 	 * This function gives area of rectangle
 	 * @param width > 0
@@ -29,6 +31,7 @@ class Shapes {
 		area=width_rectangle*height_rectangle;
 		return area;
 	}
+	
 	/**
 	 * This function gives area of square
 	 * @param width > 0
@@ -41,6 +44,7 @@ class Shapes {
 		area=width_square*width_square;
 		return area;
 	}
+	
 	/**
 	 * This function gives area of circle
 	 * @param radius > 0
