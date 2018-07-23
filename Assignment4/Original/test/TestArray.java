@@ -3,7 +3,7 @@ package test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-public class Testing {
+public class TestArray {
 	ArrOperation object=new ArrOperation();
 
 	/**
@@ -71,7 +71,7 @@ public class Testing {
 	 * For mirror section present, type 1
 	 */
 	@org.junit.Test
-	public void mirrorTestOne() {
+	public void mirrorTestOnePositive() {
 		int count=object.maxMirror (new int[]{1,2,3,8,9,3,2,1},8);
 		assertEquals(3, count);
 	}
@@ -80,7 +80,7 @@ public class Testing {
 	 * For mirror section present, type 2
 	 */
 	@org.junit.Test
-	public void mirrorTestTwo() {
+	public void mirrorTestTwoPositive() {
 		int count=object.maxMirror (new int[]{1,4,5,3,5,4,1},7);
 		assertEquals(7, count);
 	}
@@ -97,7 +97,7 @@ public class Testing {
 	 * For correct array passed for fixing x and y, type 1
 	 */
 	@org.junit.Test
-	public void fixTestOne() {
+	public void fixTestOnePositive() {
 		int result[]=object.interchange(new int[]{5,4,9,4,9,5},6,4,5);
 		int[] expected=(new int[]{9,4,5,4,5,9});
 		assertArrayEquals(expected, result);
@@ -107,7 +107,7 @@ public class Testing {
 	 * For correct array passed for fixing x and y, type 2
 	 */
 	@org.junit.Test
-	public void fixTestTwo() {
+	public void fixTestTwoPositive() {
 		int result[]=object.interchange(new int[]{1,4,1,5},4,4,5);
 		assertArrayEquals(new int[]{1,4,5,1}, result);
 	}	
@@ -116,7 +116,7 @@ public class Testing {
 	 * For correct array passed for fixing x and y, type 3
 	 */
 	@org.junit.Test
-	public void fixTestThree() {
+	public void fixTestThreePositive() {
 		int result[]=object.interchange(new int[]{1,4,1,5,5,4,1},7,4,5);
 		assertArrayEquals(new int[]{1,4,5,1,1,4,5}, result);
 	}	
@@ -133,7 +133,7 @@ public class Testing {
 	 * For x at last index in array,so throws assertion error
 	 */
 	@org.junit.Test(expected=AssertionError.class)
-	public void xAtLast() {
+	public void fixArrayXAtLast() {
 		int result[]=object.interchange(new int[]{1,5,3,4},4,4,5);
 	}
 
@@ -141,7 +141,7 @@ public class Testing {
 	 * For unequal x and y in array,so throws assertion error
 	 */
 	@org.junit.Test(expected=AssertionError.class)
-	public void unequalXY() {
+	public void fixArrayUnequalXY() {
 		int result[]=object.interchange(new int[]{1,5,5,4},4,4,5);
 	}
 
@@ -149,7 +149,7 @@ public class Testing {
 	 * For adjacent x and y in array,so throws assertion error
 	 */
 	@org.junit.Test(expected=AssertionError.class)
-	public void adjacentX() {
+	public void fixArrayAdjacentX() {
 		int result[]=object.interchange(new int[]{5,4,4,9,1,5},6,4,5);
 	}	
 }

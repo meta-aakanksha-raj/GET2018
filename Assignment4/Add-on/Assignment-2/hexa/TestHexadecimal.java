@@ -2,14 +2,14 @@ package hexa;
 
 import static org.junit.Assert.assertEquals;
 
-public class Test {
+public class TestHexadecimal {
 	HexCalc object=new HexCalc();
 
 	/**
 	 * To convert hexadecimal to decimal
 	 */
 	@org.junit.Test
-	public void hexToDec() {
+	public void testingHexToDecCoversion() {
 		int result=object.hexDec("A");
 		assertEquals(10,result );
 	}
@@ -18,7 +18,7 @@ public class Test {
 	 * To convert decimal to hexadecimal
 	 */
 	@org.junit.Test
-	public void decToHex() {
+	public void testingDecToHexConversion() {
 		String result=object.decHex(11);
 		assertEquals("B",result );
 	}
@@ -27,7 +27,7 @@ public class Test {
 	 * To add two hexadecimal number
 	 */
 	@org.junit.Test
-	public void addition() {
+	public void testingHexadecimalAddition() {
 		String result=object.addHex("A","B");
 		assertEquals("15",result );
 	}
@@ -36,7 +36,7 @@ public class Test {
 	 * To subtract two hexadecimal number
 	 */
 	@org.junit.Test
-	public void subtraction() {
+	public void testingHexadecimalSubtraction() {
 		String result=object.subHex("B","A");
 		assertEquals("1",result );
 	}	
@@ -45,7 +45,7 @@ public class Test {
 	 * To multiply two hexadecimal number
 	 */
 	@org.junit.Test
-	public void multiplication() {
+	public void testingHexadecimalMultiplication() {
 		String result=object.multHex("A","B");
 		assertEquals("6E",result );
 	}
@@ -54,7 +54,7 @@ public class Test {
 	 * To divide two hexadecimal number
 	 */
 	@org.junit.Test
-	public void division() {
+	public void testingHexadecimalDivision() {
 		String result=object.divHex("F","B");
 		assertEquals("1",result );
 	}	
@@ -63,7 +63,7 @@ public class Test {
 	 * For first greater hexadecimal value
 	 */
 	@org.junit.Test
-	public void greaterPositive() {
+	public void testingFirstHexadecimalGreaterPositive() {
 		boolean result=object.greatHex("BA","AB");
 		assertEquals(true,result );
 	}	
@@ -72,7 +72,7 @@ public class Test {
 	 * For first smaller hexadecimal value
 	 */
 	@org.junit.Test
-	public void greaterNegative() {
+	public void testingFirstHexadecimalGreaterNegative() {
 		boolean result=object.greatHex("AB","BA");
 		assertEquals(false,result );
 	}
@@ -81,7 +81,7 @@ public class Test {
 	 * For first smaller hexadecimal value
 	 */
 	@org.junit.Test
-	public void smallerPositive() {
+	public void testingFirstHexadecimalSmallerPositive() {
 		boolean result=object.smallHex("AB","BA");
 		assertEquals(true,result );
 	}
@@ -90,7 +90,7 @@ public class Test {
 	 * For first greater hexadecimal value
 	 */
 	@org.junit.Test
-	public void smallerNegative() {
+	public void testingFirstHexadecimalSmallerNegative() {
 		boolean result=object.smallHex("BA","AB");
 		assertEquals(false,result );
 	}	
@@ -99,16 +99,16 @@ public class Test {
 	 * For both equal hexadecimal value
 	 */
 	@org.junit.Test
-	public void equalityPositive() {
+	public void TestingBothHexadecimalEqualPositive() {
 		boolean result=object.equalHex("BA","BA");
 		assertEquals(true,result );
 	}
 	
 	/**
-	 * For both unequal hexadecimal value
+	 * For unequal hexadecimal value
 	 */	
 	@org.junit.Test
-	public void equalityNegative() {
+	public void TestingBothHexadecimalEqualNegative() {
 		boolean result=object.equalHex("BA","AB");
 		assertEquals(false,result );
 	}	

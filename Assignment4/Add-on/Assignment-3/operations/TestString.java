@@ -2,14 +2,14 @@ package operations;
 
 import static org.junit.Assert.*;
 
-public class Test {
+public class TestString {
 	StringOperations object=new StringOperations();
 
 	/**
 	 * For equal strings
 	 */
 	@org.junit.Test
-	public void equalityPositive() {
+	public void testingStringEqualityPositive() {
 		int result=object.compareTwoStrings("Game of Thrones","Game of Thrones");
 		assertEquals(1,result );
 	}
@@ -18,7 +18,7 @@ public class Test {
 	 * For unequal strings
 	 */
 	@org.junit.Test
-	public void equalityNegative() {
+	public void testingStringEqualityNegative() {
 		int result=object.compareTwoStrings("Game of Thrones","Game of thrones");
 		assertEquals(0,result );
 	}	
@@ -27,7 +27,7 @@ public class Test {
 	 * For reversing the string
 	 */
 	@org.junit.Test
-	public void reverse() {
+	public void testingStringReverse() {
 		String result=object.reverseString("Game of Thrones");
 		assertEquals("senorhT fo emaG",result );
 	}	
@@ -36,7 +36,7 @@ public class Test {
 	 * For converting the uppercase to lowercase and vice versa
 	 */
 	@org.junit.Test
-	public void changeCase() {
+	public void testingStringChangeCase() {
 		String result=object.replaceLowerUpperCase("Game of Thrones");
 		assertEquals("gAME OF tHRONES",result );
 	}
@@ -45,7 +45,7 @@ public class Test {
 	 * For finding largest word 
 	 */
 	@org.junit.Test
-	public void largest() {
+	public void testingStringLargest() {
 		String result=object.largestWordInString("Game of Thrones");
 		assertEquals("Thrones",result );
 	}
@@ -54,7 +54,7 @@ public class Test {
 	 * For two words having same length, returns last word
 	 */
 	@org.junit.Test
-	public void largestFromLast() {
+	public void testingStringlargestFromLast() {
 		String result=object.largestWordInString("I live in Pune");
 		assertEquals("Pune",result );
 	}	

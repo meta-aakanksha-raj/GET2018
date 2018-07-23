@@ -2,7 +2,7 @@ package fcfs;
 
 import static org.junit.Assert.*;
 
-public class Test {
+public class TestFCFS {
 
 	@org.junit.Test
 	public void test() {

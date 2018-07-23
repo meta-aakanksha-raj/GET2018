@@ -2,14 +2,14 @@ package shapes;
 
 import static org.junit.Assert.assertEquals;
 
-public class Test {
+public class TestArea {
 	Area object=new Area();
 
 	/**
 	 * For correct inputs for triangle to find area
 	 */
 	@org.junit.Test
-	public void triangleTestPositive() {
+	public void testingTriangleAreaPositive() {
 		double area=object.triangleArea(4.0,6.0);
 		assertEquals(12.0, area, 0.1);
 	}
@@ -18,7 +18,7 @@ public class Test {
 	 * For negative inputs for triangle to find area
 	 */
 	@org.junit.Test(expected=AssertionError.class)
-	public void triangleTestNegative() {
+	public void testingTriangleAreaNegative() {
 		double area=object.triangleArea(-6.0,8.5);
 	}
 
@@ -26,7 +26,7 @@ public class Test {
 	 * For correct inputs for rectangle to find area
 	 */
 	@org.junit.Test
-	public void rectangleTestPositive() {
+	public void testingRectangleAreaPositive() {
 		double area=object.rectangleArea(4.0,6.0);
 		assertEquals(24.0, area, 0.1);
 	}
@@ -35,7 +35,7 @@ public class Test {
 	 * For negative inputs for rectangle to find area
 	 */
 	@org.junit.Test(expected=AssertionError.class)
-	public void rectangleTestNegative() {
+	public void testingRectangleAreaNegative() {
 		double area=object.rectangleArea(-6.0,8.5);
 	}
 
@@ -43,7 +43,7 @@ public class Test {
 	 * For correct inputs for square to find area
 	 */
 	@org.junit.Test
-	public void squareTestPositive() {
+	public void testingSquareAreaPositive() {
 		double area=object.squareArea(4.0);
 		assertEquals(16.0, area, 0.1);
 	}
@@ -52,7 +52,7 @@ public class Test {
 	 * For negative inputs for square to find area
 	 */
 	@org.junit.Test(expected=AssertionError.class)
-	public void squareTestNegative() {
+	public void testingSquareAreaNegative() {
 		double area=object.squareArea(-6.0);
 	}
 	
@@ -60,7 +60,7 @@ public class Test {
 	 * For correct inputs for circle to find area
 	 */
 	@org.junit.Test
-	public void circleTestPositive() {
+	public void testingCircleAreaPositive() {
 		double area=object.circleArea(4.0);
 		assertEquals(50.24, area, 0.1);
 	}
@@ -69,7 +69,7 @@ public class Test {
 	 * For negative inputs for circle to find area
 	 */
 	@org.junit.Test(expected=AssertionError.class)
-	public void circleTestNegative() {
+	public void testingCircleAreaNegative() {
 		double area=object.circleArea(-6.0);
 	}
 }
