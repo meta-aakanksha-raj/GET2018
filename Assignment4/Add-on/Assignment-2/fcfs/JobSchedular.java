@@ -1,53 +1,88 @@
 package fcfs;
 
 public class JobSchedular {
-	public void completion(int number, int[][] arrival_burst) {
-		for(int  i=0 ; i<size; i++) {
-			if( i==0) {	
-				completion_time[i] = arrival_burst[i][0] + arrival_burst[i][1];
-			}
-			else {
-				if( arrival_burst[i][0] > completion_time[i-1]) {
-					completion_time[i] = arrival_burst[i][0] + arrival_burst[i][1];
-				}
-				else {
-					completion_time[i] = completion_time[i-1] + arrival_burst[i][1];
-				}
-			}
-		}
-	}
-	public void turnaround() {
-		for(int i=0 ; i<size ; i++) {
-			turnaround_time[i] = completion_time[i] - arrival_burst[i][0] ;
-		}
-	}
-	
-	public void waiting() {
-		for(int i=0 ; i<size ; i++) {	
-			waiting_time[i] = turnaround_time[i] - arrival_burst[i][1] ;	
-		}
-	}
-	
-	public void avgwaiting() {
-		for(int i=0 ; i<size ; i++) {
-			avgwaiting_time+=waiting_time[i] ;
-		}
-	}
-	
-	public int maxwait() {
-		for(int  i = 0 ; i< size;  i++) {	
-			if(waiting_time[i]>max) {
-				max=waiting_time[i];
-			}
-		}
-		return max;	
-	}	
-	public int Process(int number, int[][] arrival_burst ) {
-		completion(number,arrival_burst);
-		turnaround();
-		waiting();
-		avgwaiting();
-		max=maxwait();
 
+	/**
+	 * To calculate completion time
+	 * @param number is number of processes
+	 * @param arrivalBurst stores arrival and burst time in 2D array
+	 * @return completion time in array type
+	 */
+	public int[] completion(int number, int[][] arrivalBurst) {
+		int[] completionTime = new int[number];
+		for (int i = 0; i < number; i++) {
+			if (i == 0) {
+				completionTime[i] = arrivalBurst[i][0] + arrivalBurst[i][1];
+			} else {
+				if (arrivalBurst[i][0] > completionTime[i - 1]) {
+					completionTime[i] = arrivalBurst[i][0] + arrivalBurst[i][1];
+				} else {
+					completionTime[i] = completionTime[i - 1]
+							+ arrivalBurst[i][1];
+				}
+			}
+		}
+		return completionTime;
+	}
+
+	/**
+	 * To calculate turnaround time
+	 * @param number is number of processes
+	 * @param arrivalBurst stores arrival and burst time in 2D array
+	 * @param completionTime is the completion time of the processes given
+	 * @return turnaround time
+	 */
+	public int[] turnaround(int number, int[][] arrivalBurst, int[] completionTime) {
+		int[] turnaroundTime = new int[number];
+		for (int i = 0; i < number; i++) {
+			turnaroundTime[i] = completionTime[i] - arrivalBurst[i][0];
+		}
+		return turnaroundTime;
+	}
+
+	/**
+	 * To calculate waiting time
+	 * @param number is number of processes
+	 * @param arrivalBurst stores arrival and burst time in 2D array
+	 * @param turnaroundTime is turnaround time of the processes given
+	 * @return
+	 */
+	public int[] waiting(int number, int[][] arrivalBurst, int[] turnaroundTime) {
+		int[] waitingTime = new int[number];
+		for (int i = 0; i < number; i++) {
+			waitingTime[i] = turnaroundTime[i] - arrivalBurst[i][1];
+		}
+		return waitingTime;
+	}
+
+	/**
+	 * To calculate average waiting time
+	 * @param number is number of processes
+	 * @param waitingTime stores waiting time of processes
+	 * @return average waiting time of processes
+	 */
+	public double avgWaiting(int number, int[] waitingTime) {
+		double sumWaitingTime = 0.0, avgWaitingTime = 0.0;
+		for (int i = 0; i < number; i++) {
+			sumWaitingTime += waitingTime[i];
+		}
+		avgWaitingTime = sumWaitingTime / number;
+		return avgWaitingTime;
+	}
+
+	/**
+	 * To calculate maximum waiting time
+	 * @param number is number of processes
+	 * @param waitingTime stores waiting time of processes
+	 * @return maximum waiting time of processes
+	 */
+	public int maxWait(int number, int[] waitingTime) {
+		int maxWaitTime = 0;
+		for (int i = 0; i < number; i++) {
+			if (waitingTime[i] > maxWaitTime) {
+				maxWaitTime = waitingTime[i];
+			}
+		}
+		return maxWaitTime;
 	}
 }
