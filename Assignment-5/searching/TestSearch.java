@@ -10,7 +10,7 @@ public class TestSearch {
 	 * For searching first element through linear search
 	 */
 	@org.junit.Test
-	public void tesingLinearSearchFirstElement() {
+	public void testLinearSearchFirstElement() {
 		int result = object.linear(new int[] { 1, 2, 9, 8, 5 }, 1, 0);
 		assertEquals(0, result);
 	}
@@ -19,7 +19,7 @@ public class TestSearch {
 	 * For searching last element through linear search
 	 */
 	@org.junit.Test
-	public void tesingLinearSearchLastElement() {
+	public void testLinearSearchLastElement() {
 		int result = object.linear(new int[] { 1, 2, 9, 8, 5 }, 5, 0);
 		assertEquals(4, result);
 	}
@@ -28,7 +28,7 @@ public class TestSearch {
 	 * For searching element which is not present through linear search
 	 */
 	@org.junit.Test
-	public void testingLinearSearchElementNotPresent() {
+	public void testLinearSearchElementNotPresent() {
 		int result = object.linear(new int[] { 1, 2, 9, 8, 5 }, 4, 0);
 		assertEquals(-1, result);
 	}	
@@ -37,7 +37,7 @@ public class TestSearch {
 	 * For empty array for linear search,so throws assertion error
 	 */
 	@org.junit.Test(expected = AssertionError.class)
-	public void linearSearchEmptyArrayException() {
+	public void testLinearSearchEmptyArrayException() {
 		int count = object.linear(new int[] {}, 5, 0);
 	}
 
@@ -45,7 +45,7 @@ public class TestSearch {
 	 * For searching first element through binary search
 	 */
 	@org.junit.Test
-	public void testingBinarySearchFirstElement() {
+	public void testBinarySearchFirstElement() {
 		int result = object.binary(new int[] { 1, 2, 5, 8, 10, 15 }, 0, 5, 1);
 		assertEquals(0, result);
 	}
@@ -54,7 +54,7 @@ public class TestSearch {
 	 * For searching middle element through binary search
 	 */
 	@org.junit.Test
-	public void testingBinarySearchMiddleElement() {
+	public void testBinarySearchMiddleElement() {
 		int result = object.binary(new int[] { 1, 2, 5, 8, 10, 15 }, 0, 5, 8);
 		assertEquals(3, result);
 	}
@@ -63,7 +63,7 @@ public class TestSearch {
 	 * For searching last element through binary search
 	 */
 	@org.junit.Test
-	public void testingBinarySearchLastElement() {
+	public void testBinarySearchLastElement() {
 		int result = object.binary(new int[] { 1, 2, 5, 8, 10, 15 }, 0, 5, 15);
 		assertEquals(5, result);
 	}
@@ -72,7 +72,7 @@ public class TestSearch {
 	 * For searching element which is not present through binary search
 	 */
 	@org.junit.Test
-	public void testingBinarySearchElementNotPresent() {
+	public void testBinarySearchElementNotPresent() {
 		int result = object.binary(new int[] { 1, 2, 5, 8, 10, 15 }, 0, 5, 18);
 		assertEquals(-1, result);
 	}
@@ -81,7 +81,7 @@ public class TestSearch {
 	 * For empty array for binary search,so throws assertion error
 	 */
 	@org.junit.Test(expected = AssertionError.class)
-	public void binaryTestEmptyArrayException() {
+	public void testBinaryTestEmptyArrayException() {
 		int count = object.binary(new int[] {}, 0, 0, 4);
 	}
 }
