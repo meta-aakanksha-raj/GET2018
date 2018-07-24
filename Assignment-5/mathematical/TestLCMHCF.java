@@ -9,7 +9,7 @@ public class TestLCMHCF {
 	 * For correct values to find HCF
 	 */
 	@org.junit.Test
-	public void hcfPositiveValues() {
+	public void testHCFPositiveValues() {
 		int result = object.hcf(396, 300);
 		assertEquals(12, result);
 	}
@@ -18,7 +18,7 @@ public class TestLCMHCF {
 	 * For incorrect i.e. negative for HCF
 	 */
 	@org.junit.Test(expected = AssertionError.class)
-	public void hcfExceptionNegativeValues() {
+	public void testHCFExceptionNegativeValues() {
 		int result = object.hcf(-396, 300);
 	}
 
@@ -26,7 +26,7 @@ public class TestLCMHCF {
 	 * For correct values to find LCM
 	 */
 	@org.junit.Test
-	public void lcmPositiveValues() {
+	public void testLCMPositiveValues() {
 		int result = object.lcm(15, 6);
 		assertEquals(30, result);
 	}
@@ -35,7 +35,7 @@ public class TestLCMHCF {
 	 * For incorrect i.e. negative for LCM
 	 */
 	@org.junit.Test(expected = AssertionError.class)
-	public void lcmExceptionNegativeValues() {
+	public void testLCMExceptionNegativeValues() {
 		int result = object.lcm(15, -6);
 	}
 }
