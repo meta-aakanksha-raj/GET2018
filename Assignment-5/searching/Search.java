@@ -1,6 +1,14 @@
 package searching;
 
 public class Search {
+
+	/**
+	 * To search for an element in an array one by one through linear search
+	 * @param array is array passed in which we have to find the element
+	 * @param element is the key which we need to search
+	 * @param index is the staring index of array
+	 * @return the index at which we found the element if not found returns -1
+	 */
 	public int linear(int[] array, int element,int index) {
         if(array.length == 0) {
 			throw new AssertionError("Array empty");
@@ -18,6 +26,15 @@ public class Search {
 		}
 		return position;
 	}
+
+	/**
+	 * To search for an element in an array by binary search
+	 * @param sortedArray is the sorted array in which we have to find the element
+	 * @param start is the starting index
+	 * @param end is the index of last element
+	 * @param element is the number which needs to be searched
+	 * @return the index value of the element if found else returns -1
+	 */
     public int binary(int[] sortedArray, int start, int end, int element) {
     	
         if(sortedArray.length == 0) {
