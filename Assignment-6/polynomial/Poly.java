@@ -8,13 +8,13 @@ final class Poly {
 	public Poly(int[][]powerCoefficient) {
 		int[][] originalArray=Poly.getArray(powerCoefficient);
 		newArray=removeCoefficientZero(originalArray);
-		n=newArray.length;
+		n=newArray[0].length;
 		checking(newArray);
 	}
 	
 	private static int[][] getArray(int[][] powerCoefficient) {
-		int[][] array=new int[2][powerCoefficient.length];
-		for(int i=0;i<powerCoefficient.length;i++) {
+		int[][] array=new int[2][powerCoefficient[0].length];
+		for(int i=0;i<powerCoefficient[0].length;i++) {
 			array[0][i]=powerCoefficient[0][i];
 			array[1][i]=powerCoefficient[1][i];			
 		}
@@ -29,19 +29,21 @@ final class Poly {
 	
 	private int[][] removeCoefficientZero(int[][] originalArray) {
 		int[][] copiedArray=getArray(originalArray);
-		int length=copiedArray.length;
+		int length=copiedArray[0].length;
 		int count=0;
 		for(int i=0;i<length;i++) {
 			if(0==copiedArray[1][i]) {
 				count++;
 			}
 		}
+		System.out.println(count);
 		int arrayLength=length-count;
 		int[][] newArray=new int[2][arrayLength];
-		for(int i=0;i<arrayLength;i++) {
+		for(int i=0,j=0;i<length;i++) {
 			if(copiedArray[1][i]!=0) {
-				newArray[0][i]=copiedArray[0][i];
-				newArray[1][i]=copiedArray[1][i];
+				newArray[0][j]=copiedArray[0][i];
+				newArray[1][j]=copiedArray[1][i];
+				j++;
 			}
 		}
 		return newArray;
@@ -49,7 +51,7 @@ final class Poly {
 	
 	public double evaluate(double value) {
 		double result=0;
-		for(int j=0;j<n;j++) {
+		for(int j=0;j<this.n;j++) {
 			int x=newArray[0][j];
 			double product=Math.pow(value, x);
 			result=result+newArray[1][j]*product;
@@ -72,15 +74,15 @@ final class Poly {
 		boolean flag=false;
 		for(int i=0;i<p1.n;i++){
 			for(int j=0;j<p2.n;j++) {
-				if(p1.powerCoefficient[0][i]==p2.powerCoefficient[0][j]) {
-					array[0][k]=p1.powerCoefficient[0][i];
-					array[1][k]=p1.powerCoefficient[1][i]+p2.powerCoefficient[1][i];
+				if(p1.newArray[0][i]==p2.newArray[0][j]) {
+					array[0][k]=p1.newArray[0][i];
+					array[1][k]=p1.newArray[1][i]+p2.newArray[1][i];
 					k++;					
 					break;
 				}
 				else {
-					array[0][k]=p1.powerCoefficient[0][i];
-					array[1][k]=p1.powerCoefficient[1][i];
+					array[0][k]=p1.newArray[0][i];
+					array[1][k]=p1.newArray[1][i];
 					k++;
 				}
 			}
