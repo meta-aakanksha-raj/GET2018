@@ -23,7 +23,7 @@ final class Poly {
 		int[][] removedSamePower = samePower(originalArray);
 		newArray = removeCoefficientZero(removedSamePower);
 		n = newArray[0].length;
-		checking(newArray);
+		check(newArray);
 	}
 
 	/**
@@ -44,7 +44,7 @@ final class Poly {
 	 * This is to check for empty array exception
 	 * @param newArray, is the array passed to check
 	 */
-	private void checking(int[][] newArray) {
+	private void check(int[][] newArray) {
 		if (n == 0) {
 			throw new AssertionError("Set is empty");
 		}
