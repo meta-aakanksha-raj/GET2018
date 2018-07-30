@@ -1,6 +1,6 @@
 package searching;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class TestSearch {
 
