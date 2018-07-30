@@ -7,15 +7,15 @@ public class ArrOperation {
 	 * @param arrayLength, is the length of array 
 	 * @return the clumps from array,else if array is empty, throws assertion error
 	 */
-	public int countClumps (int[] array,int arrayLength) {
-		if(arrayLength == 0) {
+	public int countClumps (int[] array) {
+		if(array.length == 0) {
 			throw new AssertionError("Array is empty");
 		}
 		int count=0;
-		for(int i=0;i<arrayLength-1;i++) {    
+		for(int i=0;i<array.length-1;i++) {
 			if(array[i]==array[i+1]) {
 				count++;	
-				for(int j=i+1;j<arrayLength-1;j++) {
+				for(int j=i+1;j<array.length-1;j++) {
 					if(array[j]!=array[j+1]) {
 						break;
 					}
@@ -33,15 +33,15 @@ public class ArrOperation {
 	 * @param arrayLength, is the length of array 
 	 * @return the splitting index from array,else if array is empty, throws assertion error
 	 */
-	public int split (int[] array,int arrayLength) {
+	public int split (int[] array) {
 		int firstSum=0,result=-1;
-		if(arrayLength == 0) {
+		if(array.length == 0) {
 			throw new AssertionError("Array is empty");
 		}			
-		for(int i=0;i<arrayLength;i++) {
+		for(int i=0;i<array.length;i++) {
 			firstSum=firstSum+array[i];
 			int lastSum=0;
-			for(int j=i+1;j<arrayLength;j++) {
+			for(int j=i+1;j<array.length;j++) {
 				lastSum=lastSum+array[j];	
 			}
 			if(firstSum==lastSum) {
@@ -58,17 +58,17 @@ public class ArrOperation {
 	 * @param arrayLength, is the length of array
 	 * @return size of largest mirror section,else if array is empty, throws assertion error
 	 */
-	public int maxMirror(int[] array, int arrayLength) {
-		if(arrayLength == 0) {
+	public int maxMirror(int[] array) {
+		if(array.length == 0) {
 			throw new AssertionError("Array is empty");
 		}
 		int max=0;
-		for(int i=0;i<arrayLength;i++) {		
+		for(int i=0;i<array.length;i++) {		
 			
-			for(int j=arrayLength-1; j>=0;j--) {
+			for(int j=array.length-1; j>=0;j--) {
 				int count=0;
 				int start=i,end=j;;
-				while(start<arrayLength && end>=0 && array[start]==array[end]) {					
+				while(start<array.length && end>=0 && array[start]==array[end]) {					
 					count++;
 					start++;
 					end--;
@@ -89,9 +89,9 @@ public class ArrOperation {
 	 * @param x, is the first value passed from interchange function
 	 * @param y,is the second value passed from interchange function
 	 */
-	public void unequalXY (int[] array,int arrayLength,int x,int y) {
+	public void unequalXY (int[] array,int x,int y) {
 		int countX=0,countY=0;
-		for(int i=0;i<arrayLength;i++) {
+		for(int i=0;i<array.length;i++) {
 			if(x==array[i]) {
 				countX++;
 			}
@@ -111,8 +111,8 @@ public class ArrOperation {
 	 * @param x, is the first value passed from interchange function
 	 * @param y,is the second value passed from interchange function
 	 */
-	public void adjacentX (int[] array,int arrayLength,int x,int y) {
-		for(int i=0;i<arrayLength-1;i++) {
+	public void adjacentX (int[] array,int x,int y) {
+		for(int i=0;i<array.length-1;i++) {
 			if(x==array[i] && x==array[i+1]) {
 				throw new AssertionError("Unequal number of X and Y");
 			}
@@ -127,18 +127,18 @@ public class ArrOperation {
 	 * @param y, it is the value which should be moved after every x
 	 * @return array  with swapped y values
 	 */
-	public int[] interchange (int[] array,int arrayLength,int x,int y) {
-		if(arrayLength == 0) {
+	public int[] interchange (int[] array,int x,int y) {
+		if(array.length == 0) {
 			throw new AssertionError("Array is empty");
 		}
-		if(x==array[arrayLength-1]) {
+		if(x==array[array.length-1]) {
 			throw new AssertionError("X is at last position");
 		}		
-		unequalXY(array,arrayLength,x,y);
-		adjacentX(array,arrayLength,x,y);
-		for(int i=0;i<arrayLength-1;i++) {
+		unequalXY(array,x,y);
+		adjacentX(array,x,y);
+		for(int i=0;i<array.length-1;i++) {
 			if(x==array[i] && y!=array[i+1]) {
-				for(int j= 1;j< arrayLength;j++) {
+				for(int j= 1;j< array.length;j++) {
 					if(y==array[j] && x!= array[j-1]) {
 						int temp;
 						temp=array[j];
@@ -149,7 +149,7 @@ public class ArrOperation {
 			}
 		}
 		if (array[0]==y) {
-			for(int i=arrayLength-2;i>=0;i--) {
+			for(int i=array.length-2;i>=0;i--) {
 				if(x==array[i]) {
 					int temp;
 					temp=array[i+1];
