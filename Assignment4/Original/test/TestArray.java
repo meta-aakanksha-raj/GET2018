@@ -11,7 +11,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void clumpTestOnePositive() {
-		int count=object.countClumps(new int[]{1,2,2,3,4,4},6);
+		int count=object.countClumps(new int[]{1,2,2,3,4,4});
 		assertEquals(2, count);
 	}
 
@@ -20,7 +20,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void ClumpTestTwoPositive() {
-		int count=object.countClumps(new int[]{1,1,1,1,1},5);
+		int count=object.countClumps(new int[]{1,1,1,1,1});
 		assertEquals(1, count);
 	}
 
@@ -29,7 +29,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void ClumpTestNegative() {
-		int count=object.countClumps(new int[]{1,2,3,4,5},5);
+		int count=object.countClumps(new int[]{1,2,3,4,5});
 		assertEquals(0, count);
 	}
 
@@ -38,7 +38,7 @@ public class TestArray {
 	 */
 	@org.junit.Test(expected=AssertionError.class)
 	public void clumpTestException() {
-		int count=object.countClumps(new int[]{},0);
+		int count=object.countClumps(new int[]{});
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void splitTestPositive() {
-		int indexSplit=object.split(new int[]{1,1,1,2,1},5);
+		int indexSplit=object.split(new int[]{1,1,1,2,1});
 		assertEquals(3, indexSplit);
 	}
 	
@@ -55,7 +55,7 @@ public class TestArray {
 	 */	
 	@org.junit.Test
 	public void splitTestNegative() {
-		int indexSplit=object.split(new int[]{2,1,1,2,1},5);
+		int indexSplit=object.split(new int[]{2,1,1,2,1});
 		assertEquals(-1, indexSplit);
 	}	
 
@@ -64,7 +64,7 @@ public class TestArray {
 	 */
 	@org.junit.Test(expected=AssertionError.class)
 	public void splitTestException() {
-		int indexSplit=object.split(new int[]{},0);
+		int indexSplit=object.split(new int[]{});
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void mirrorTestOnePositive() {
-		int count=object.maxMirror (new int[]{1,2,3,8,9,3,2,1},8);
+		int count=object.maxMirror (new int[]{1,2,3,8,9,3,2,1});
 		assertEquals(3, count);
 	}
 
@@ -81,7 +81,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void mirrorTestTwoPositive() {
-		int count=object.maxMirror (new int[]{1,4,5,3,5,4,1},7);
+		int count=object.maxMirror (new int[]{1,4,5,3,5,4,1});
 		assertEquals(7, count);
 	}
 
@@ -90,7 +90,7 @@ public class TestArray {
 	 */
 	@org.junit.Test(expected=AssertionError.class)
 	public void mirrorArrayEmptyException() {
-		int count=object.maxMirror (new int[]{},0);
+		int count=object.maxMirror (new int[]{});
 	}	
 
 	/**
@@ -98,7 +98,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void fixTestOnePositive() {
-		int result[]=object.interchange(new int[]{5,4,9,4,9,5},6,4,5);
+		int result[]=object.interchange(new int[]{5,4,9,4,9,5},4,5);
 		int[] expected=(new int[]{9,4,5,4,5,9});
 		assertArrayEquals(expected, result);
 	}
@@ -108,7 +108,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void fixTestTwoPositive() {
-		int result[]=object.interchange(new int[]{1,4,1,5},4,4,5);
+		int result[]=object.interchange(new int[]{1,4,1,5},4,5);
 		assertArrayEquals(new int[]{1,4,5,1}, result);
 	}	
 
@@ -117,7 +117,7 @@ public class TestArray {
 	 */
 	@org.junit.Test
 	public void fixTestThreePositive() {
-		int result[]=object.interchange(new int[]{1,4,1,5,5,4,1},7,4,5);
+		int result[]=object.interchange(new int[]{1,4,1,5,5,4,1},4,5);
 		assertArrayEquals(new int[]{1,4,5,1,1,4,5}, result);
 	}	
 
@@ -126,7 +126,7 @@ public class TestArray {
 	 */
 	@org.junit.Test(expected=AssertionError.class)
 	public void fixArrayEmptyException() {
-		int result[]=object.interchange(new int[]{},0,4,5);
+		int result[]=object.interchange(new int[]{},4,5);
 	}
 
 	/**
@@ -134,7 +134,7 @@ public class TestArray {
 	 */
 	@org.junit.Test(expected=AssertionError.class)
 	public void fixArrayXAtLast() {
-		int result[]=object.interchange(new int[]{1,5,3,4},4,4,5);
+		int result[]=object.interchange(new int[]{1,5,3,4},4,5);
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class TestArray {
 	 */
 	@org.junit.Test(expected=AssertionError.class)
 	public void fixArrayUnequalXY() {
-		int result[]=object.interchange(new int[]{1,5,5,4},4,4,5);
+		int result[]=object.interchange(new int[]{1,5,5,4},4,5);
 	}
 
 	/**
@@ -150,6 +150,6 @@ public class TestArray {
 	 */
 	@org.junit.Test(expected=AssertionError.class)
 	public void fixArrayAdjacentX() {
-		int result[]=object.interchange(new int[]{5,4,4,9,1,5},6,4,5);
+		int result[]=object.interchange(new int[]{5,4,4,9,1,5},4,5);
 	}	
 }
