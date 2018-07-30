@@ -57,7 +57,7 @@ final class Sparse {
 	}
 
 	/**
-	 * This function does deep copy of passed matrix
+	 * This function does deep copy of passed matrix and its complexity is O(n^2)
 	 * 
 	 * @param passedMatrix
 	 * @return a copy of passed matrix
@@ -73,7 +73,7 @@ final class Sparse {
 	}
 
 	/**
-	 * To change the sparse matrix to compressed or densed form
+	 * To change the sparse matrix to compressed or densed form and its complexity is O(n^2)
 	 * @param sparseMatrix
 	 * @return the densed or compressed matrix
 	 */
