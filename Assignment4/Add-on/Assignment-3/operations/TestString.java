@@ -1,6 +1,6 @@
 package operations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class TestString {
 	StringOperations object=new StringOperations();
