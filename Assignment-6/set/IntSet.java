@@ -12,7 +12,7 @@ final class IntSet {
 	public IntSet(int[] set) {
 		this.set = set;
 		this.length = set.length;
-		checking(set);
+		check(set);
 	}
 
 	/**
@@ -32,7 +32,7 @@ final class IntSet {
 	 * if not matched then throws error
 	 * @param set is the array passed to check
 	 */
-	private void checking(int[] set) {
+	private void check(int[] set) {
 		if (set.length == 0) {
 			throw new AssertionError("Set is empty");
 		}
