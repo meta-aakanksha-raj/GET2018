@@ -1,18 +1,22 @@
 package matrix;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 public class TestSparse {
+
+	int[][] matrixOne = { { 0, 0, 2 }, { 1, 0, 0 }, { 0, 13, 0 } };
+	int[][] matrixTwo = { { 0, 0, 6 }, { 4, 3, 0 }, { 0, 0, 0 } };
 
 	/**
 	 * To test for transpose
 	 */
 	@Test
 	public void testTranspose() {
-		int[][] mainMatrix = { { 0, 0, 2 }, { 1, 0, 0 }, { 0, 13, 0 } };
-		Sparse objectTranspose = new Sparse(mainMatrix);
+
+		Sparse objectTranspose = new Sparse(matrixOne);
 		int[][] transpose = objectTranspose.transpose();
 		assertArrayEquals(
 				new int[][] { { 0, 1, 2 }, { 1, 2, 0 }, { 1, 13, 2 } },
@@ -24,8 +28,7 @@ public class TestSparse {
 	 */
 	@Test
 	public void testSymmetryNegative() {
-		int[][] mainMatrix = { { 0, 0, 2 }, { 1, 0, 0 }, { 0, 13, 0 } };
-		Sparse objectSymmetry = new Sparse(mainMatrix);
+		Sparse objectSymmetry = new Sparse(matrixOne);
 		boolean transpose = objectSymmetry.symmetry();
 		assertEquals(false, transpose);
 	}
@@ -35,8 +38,8 @@ public class TestSparse {
 	 */
 	@Test
 	public void testSymmetryPositive() {
-		int[][] mainMatrix = { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
-		Sparse objectSymmetry = new Sparse(mainMatrix);
+		int[][] symmetricalMatrix = { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+		Sparse objectSymmetry = new Sparse(symmetricalMatrix);
 		boolean transpose = objectSymmetry.symmetry();
 		assertEquals(true, transpose);
 	}
@@ -46,8 +49,6 @@ public class TestSparse {
 	 */
 	@Test
 	public void testaddition() {
-		int[][] matrixOne = { { 0, 0, 2 }, { 1, 0, 0 }, { 0, 13, 0 } };
-		int[][] matrixTwo = { { 0, 0, 6 }, { 4, 3, 0 }, { 0, 0, 0 } };
 		Sparse objectOne = new Sparse(matrixOne);
 		Sparse objectTwo = new Sparse(matrixTwo);
 		Sparse objectAddition = Sparse.addMatrix(objectOne, objectTwo);
@@ -62,15 +63,13 @@ public class TestSparse {
 	 */
 	@Test
 	public void testMultiplication() {
-		int[][] matrixOne = { { 0, 1, 0 }, { 0, 1, 0 }, { 1, 0, 2 } };
-		int[][] matrixTwo = { { 2, 0, 0 }, { 0, 0, 0 }, { 1, 0, 0 } };
 		Sparse objectOne = new Sparse(matrixOne);
 		Sparse objectTwo = new Sparse(matrixTwo);
-		Sparse objectThree = new Sparse();		
+		Sparse objectThree = new Sparse();
 		int[][] multiplicationResult = objectThree.multiplyMatrix(objectOne,
 				objectTwo);
 		assertArrayEquals(
-				new int[][] { { 0, 0, 0 }, { 0, 0, 0 }, { 4, 0, 0 } },
+				new int[][] { { 0, 0, 0 }, { 0, 0, 6 }, { 52, 39, 0 } },
 				multiplicationResult);
 	}
 }
