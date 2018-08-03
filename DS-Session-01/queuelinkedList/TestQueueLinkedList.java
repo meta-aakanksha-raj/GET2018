@@ -6,6 +6,9 @@ import org.junit.Test;
 
 import queue.QueueArray;
 
+/**
+*To test for different methods of Queue implementation using linkedlist
+*/
 public class TestQueueLinkedList {
 
 	QueueLinkedList object = new QueueLinkedList();
