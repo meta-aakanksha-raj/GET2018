@@ -1,5 +1,10 @@
 package system;
 
+/**
+ * Elephant is the subclass of Mammal
+ * It initializes the properties of Elephant when added to Zoo
+ *
+ */
 public class Elephant extends Mammal{
 	
 	private static int id=1;
