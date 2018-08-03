@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+*To test for different methods of Queue implementation using array
+*/
 public class TestQueueArray {
 
 	QueueArray object = new QueueArray(2);
