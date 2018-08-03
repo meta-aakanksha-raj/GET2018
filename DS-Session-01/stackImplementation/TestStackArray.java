@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+*To test for different methods of Stack implementation using array
+*/
 public class TestStackArray {
 
 	StackArray object = new StackArray(2);
