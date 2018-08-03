@@ -3,6 +3,11 @@ package system;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Cage class will add the cage to the Zoo
+ * Here many getter setter are present to initializes the Cage properties
+ *
+ */
 public class Cage {
 
 	private AnimalType animalType;
