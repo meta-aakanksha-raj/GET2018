@@ -6,6 +6,9 @@ import org.junit.Test;
 
 import stackImplementation.StackArray;
 
+/**
+*To test for different methods of Stack implementation using linkedlist
+*/
 public class TestStackLinkedList {
 
 	StackLinkedList object = new StackLinkedList();
