@@ -8,7 +8,8 @@ import java.util.Date;
  */
 public class Triangle implements Shape {
 
-	public Date timestamp = null; // time at which object is added to screen
+	// time at which object is added to screen
+	public Date timestamp = null;
 	private Point origin;
 	private float firstSide, secondSide, thirdSide;
 
@@ -23,7 +24,6 @@ public class Triangle implements Shape {
 
 	@Override
 	public float getArea() {
-
 		double halfPerimeter = getPerimeter() / 2;
 		return (float) (Math.sqrt(halfPerimeter * (halfPerimeter - firstSide)
 				* (halfPerimeter - secondSide) * (halfPerimeter - thirdSide)));
@@ -31,25 +31,22 @@ public class Triangle implements Shape {
 
 	@Override
 	public float getPerimeter() {
-
 		return (firstSide + secondSide + thirdSide);
 	}
 
 	@Override
 	public Point getOrigin() {
-
 		return new Point(origin.getXCoordinate(), origin.getYCoordinate());
 	}
 
 	@Override
 	public ShapeEnum getShapeType() {
-
 		return ShapeEnum.TRIANGLE;
 	}
 
+	// distance between origin of the shape and origin of the screen
 	@Override
-	public float getOriginDistance() { // distance between origin of the shape
-										// and origin of the screen
+	public float getOriginDistance() {
 		return (float) Math.sqrt((Math.pow(origin.getXCoordinate(), 2) + Math
 				.pow(origin.getYCoordinate(), 2)));
 	}
