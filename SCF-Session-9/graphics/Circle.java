@@ -19,19 +19,16 @@ public class Circle implements Shape {
 
 	@Override
 	public float getArea() {
-
 		return (float) (3.14 * radius * radius);
 	}
 
 	@Override
 	public float getPerimeter() {
-
 		return (float) (2 * 3.14 * radius);
 	}
 
 	@Override
 	public Point getOrigin() {
-
 		return new Point(origin.getXCoordinate(), origin.getYCoordinate());
 	}
 
@@ -62,27 +59,22 @@ public class Circle implements Shape {
 
 	@Override
 	public ShapeEnum getShapeType() {
-
 		return ShapeEnum.CIRCLE;
 	}
 
 	@Override
-	public float getOriginDistance() {// distance between origin of the shape
-										// and origin of the screen
-
+	public float getOriginDistance() {// distance between origin of the shape and origin of the screen
 		return (float) Math.sqrt(Math.pow(origin.getXCoordinate(), 2)
 				+ Math.pow(origin.getYCoordinate(), 2));
 	}
 
 	@Override
 	public Date getTimestamp() {
-
 		return timestamp;
 	}
 
 	@Override
 	public void setTimestamp(Date timestamp) {
-
 		this.timestamp = timestamp;
 	}
 }
