@@ -8,8 +8,9 @@ import java.util.Date;
  *
  */
 public class Polygon implements Shape {
-
-	public Date timestamp = null; // time at which object is added to screen
+	
+	// time at which object is added to screen
+	public Date timestamp = null; 
 	private int noOfSides;
 	private float lengthOfSide;
 	private Point origin;
@@ -23,38 +24,32 @@ public class Polygon implements Shape {
 
 	@Override
 	public float getArea() {
-
 		return (float) ((getPerimeter() * getApothem()) / 2.0);
 	}
 
 	@Override
 	public float getPerimeter() {
-
 		return lengthOfSide * noOfSides;
 	}
 
 	@Override
 	public Point getOrigin() {
-
 		return new Point(origin.getXCoordinate(), origin.getYCoordinate());
 	}
 
 	@Override
 	public boolean isPointEnclosed(Point isEnclosedPoint) {
-
 		return false;
 	}
 
 	@Override
 	public ShapeEnum getShapeType() {
-
 		return ShapeEnum.REGULARPOLYGON;
 	}
 
+	// distance between origin of the shapeand origin of the screen
 	@Override
-	public float getOriginDistance() { // distance between origin of the shape
-										// and origin of the screen
-
+	public float getOriginDistance() { 
 		return (float) Math.sqrt(Math.pow(origin.getXCoordinate(), 2)
 				+ Math.pow(origin.getYCoordinate(), 2));
 	}
