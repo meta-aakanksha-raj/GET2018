@@ -138,7 +138,7 @@ public class InfixToPostfix {
      * @param args
      */
 	public static void main(String args[]) {
-		String result=InfixToPostfix.infixToPostfix("a + b + c + d * n / p");
+		String result=InfixToPostfix.infixToPostfix("a * ( b + c ) * d");
 		System.out.println(result);
 	}
 }
