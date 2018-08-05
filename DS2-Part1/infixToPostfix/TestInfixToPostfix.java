@@ -17,9 +17,6 @@ public class TestInfixToPostfix {
 		String postfix = InfixToPostfix.infixToPostfix("2 + 3");
 		assertEquals("23+", postfix);
 
-		//String firstPostfix = InfixToPostfix.infixToPostfix("* b");
-		//assertEquals("* b", firstPostfix);
-
 		String secondPostfix = InfixToPostfix.infixToPostfix("a * b");
 		assertEquals("ab*", secondPostfix);
 
