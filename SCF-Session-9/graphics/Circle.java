@@ -7,7 +7,8 @@ import java.util.Date;
  */
 public class Circle implements Shape {
 
-	public Date timestamp = null; // time at which object is added to screen
+	// time at which object is added to screen
+	public Date timestamp = null; 
 	private float radius;
 	private Point origin;
 
@@ -62,8 +63,9 @@ public class Circle implements Shape {
 		return ShapeEnum.CIRCLE;
 	}
 
+	// distance between origin of the shape and origin of the screen
 	@Override
-	public float getOriginDistance() {// distance between origin of the shape and origin of the screen
+	public float getOriginDistance() {
 		return (float) Math.sqrt(Math.pow(origin.getXCoordinate(), 2)
 				+ Math.pow(origin.getYCoordinate(), 2));
 	}
