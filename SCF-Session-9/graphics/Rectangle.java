@@ -8,7 +8,8 @@ import java.util.Date;
  */
 public class Rectangle implements Shape {
 
-	public Date timestamp = null; // time at which object is added to screen
+	// time at which object is added to screen
+	public Date timestamp = null;
 	private float breadth;
 	private float length;
 	private Point origin;
@@ -22,25 +23,21 @@ public class Rectangle implements Shape {
 
 	@Override
 	public float getArea() {
-
 		return length * breadth;
 	}
 
 	@Override
 	public float getPerimeter() {
-
 		return 2 * (length + breadth);
 	}
 
 	@Override
 	public Point getOrigin() {
-
 		return new Point(origin.getXCoordinate(), origin.getYCoordinate());
 	}
 
 	@Override
 	public boolean isPointEnclosed(Point isEnclosedPoint) {
-
 		boolean result = false;
 		float xOrigin = origin.getXCoordinate();
 		float yOrigin = origin.getYCoordinate();
@@ -55,14 +52,12 @@ public class Rectangle implements Shape {
 
 	@Override
 	public ShapeEnum getShapeType() {
-
 		return ShapeEnum.RECTANGLE;
 	}
 
+	// distance between origin of the shape and origin of the screen
 	@Override
-	public float getOriginDistance() // distance between origin of the shape and
-										// origin of the screen
-	{
+	public float getOriginDistance() {
 		return (float) Math.sqrt((Math.pow(origin.getXCoordinate(), 2) + Math
 				.pow(origin.getYCoordinate(), 2)));
 	}
