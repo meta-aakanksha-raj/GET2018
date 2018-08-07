@@ -21,15 +21,23 @@ public class QueueArray implements Queue {
 	 * To add element to queue
 	 */
 	@Override
-	public void add(int element) {
-		if (rear + 1 >= number) {
-			throw new AssertionError("Queue is full");
-		} else if (rear == -1 && front == -1) {
-			array[++rear] = element;
-			front++;
-		} else {
-			array[++rear] = element;
+	public boolean add(int element) {
+		try{
+			if (rear + 1 >= number) {
+				throw new Exception("Queue is full");
+			} 
+			else if (rear == -1 && front == -1) {
+				array[++rear] = element;
+				front++;
+			}
+			else {
+				array[++rear] = element;
+			}
+		}catch(Exception e) {
+		e.printStackTrace();
+		return false;
 		}
+	return true;	
 	}
 
 	/**
