@@ -37,10 +37,10 @@ public class QueueLinkedList implements Queue {
 			rear.link = null;
 			front = rear;
 		} else {
-			queueNode.link = rear;
+			rear.link = queueNode;
 			rear = queueNode;
+			rear.link = null;
 		}
-
 	}
 
 	/**
@@ -53,11 +53,9 @@ public class QueueLinkedList implements Queue {
 			value = front.value;
 			QueueNode queueNode = front;
 			front = queueNode.link;
-			queueNode.link = null;
 		} else
 			throw new AssertionError("Queue is empty, cannot pop!!");
 		return value;
-
 	}
 
 	/**
