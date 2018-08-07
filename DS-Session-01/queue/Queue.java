@@ -5,7 +5,7 @@ package queue;
  */
 public interface Queue {
 
-	public void add(int element);
+	public boolean add(int element);
 
 	public int delete();
 
