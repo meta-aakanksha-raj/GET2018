@@ -4,9 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-/**
-*To test for different methods of Queue implementation using array
-*/
 public class TestQueueArray {
 
 	QueueArray object = new QueueArray(2);
@@ -16,18 +13,21 @@ public class TestQueueArray {
 	 */
 	@Test
 	public void testAddition() {
-		object.add(23);
-		object.add(78);
+		boolean resultOne=object.add(23);
+		assertEquals(true,resultOne);
+		boolean resultTwo=object.add(78);
+		assertEquals(true,resultTwo);
 	}
 
 	/**
 	 * To test for adding element to queue when queue is full
 	 */
-	@Test(expected = AssertionError.class)
+	@Test
 	public void testAdditionOnFullQueue() {
 		object.add(23);
 		object.add(78);
-		object.add(76);
+		boolean result=object.add(76);
+		assertEquals(false,result);
 	}
 
 	/**
