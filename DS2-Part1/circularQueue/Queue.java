@@ -8,15 +8,15 @@ public interface Queue {
 	/**
 	 * To add element to queue
 	 * @param element
-	 * @return true if element is added
+	 * @return true if element is added else returns false
 	 */
 	public boolean add(int element);
 
 	/**
 	 * To delete element from queue
-	 * @return the deleted element
+	 * @return true if element is deleted else returns false
 	 */
-	public int delete();
+	public boolean delete();
 
 	/**
 	 * To check if queue is empty
