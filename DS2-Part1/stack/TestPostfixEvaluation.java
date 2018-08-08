@@ -19,10 +19,10 @@ public class TestPostfixEvaluation {
 		assertEquals(5, postfix.evaluatePostfix());
 
 		postfix = new PostfixEvaluation("2 3 6 * + 22 -");
-		assertEquals(2, postfix.evaluatePostfix());
+		assertEquals(-2, postfix.evaluatePostfix());
 
 		postfix = new PostfixEvaluation("2 3 5 * + 2 -");
-		assertEquals(-15, postfix.evaluatePostfix());
+		assertEquals(15, postfix.evaluatePostfix());
 	}
 
 	/**
