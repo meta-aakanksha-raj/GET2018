@@ -25,7 +25,7 @@ public class TestCircularQueue {
 	@Test
 	public void testAddOne() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
+		assertEquals(true, (obj.add(1)));
 		assertEquals(true, (obj.add(5)));
 	}
 
@@ -35,21 +35,21 @@ public class TestCircularQueue {
 	@Test
 	public void testAddTwo() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
-		obj.add(5);
+		assertEquals(true, (obj.add(1)));
+		assertEquals(true, (obj.add(5)));
 		assertEquals(true, (obj.add(1000)));
 	}
 
 	/**
 	 * To add element to the queue when queue is full
 	 */
-	@Test(expected = AssertionError.class)
+	@Test
 	public void testAddWhenIsFull() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
-		obj.add(5);
-		obj.add(1000);
-		assertEquals(true, (obj.add(60)));
+		assertEquals(true, (obj.add(1)));
+		assertEquals(true, (obj.add(5)));
+		assertEquals(true, (obj.add(1000)));
+		assertEquals(false, (obj.add(60)));
 	}
 
 	/**
@@ -58,21 +58,20 @@ public class TestCircularQueue {
 	@Test
 	public void testDelete() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
-		obj.add(5);
-		obj.add(1000);
-		assertEquals(1, (obj.delete()));
+		assertEquals(true, (obj.add(1)));
+		assertEquals(true, (obj.add(5)));
+		assertEquals(true, (obj.delete()));
 	}
 
 	/**
 	 * To delete element from the queue when queue is empty
 	 */
-	@Test(expected = AssertionError.class)
+	@Test
 	public void testDeleteWhenempty() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
-		obj.delete();
-		assertEquals(1, (obj.delete()));
+		obj.add(5);
+		assertEquals(true, (obj.delete()));
+		assertEquals(false, (obj.delete()));
 	}
 
 	/**
@@ -81,8 +80,8 @@ public class TestCircularQueue {
 	@Test
 	public void testIsEmptyPositive() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
-		obj.delete();
+		assertEquals(true, (obj.add(1)));
+		assertEquals(true, (obj.delete()));
 		assertEquals(true, (obj.isEmpty()));
 	}
 
@@ -92,10 +91,10 @@ public class TestCircularQueue {
 	@Test
 	public void testIsEmptyNegative() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
-		obj.add(5);
-		obj.add(1000);
-		obj.delete();
+		assertEquals(true, (obj.add(1)));
+		assertEquals(true, (obj.add(5)));
+		assertEquals(true, (obj.add(1000)));
+		assertEquals(true, (obj.delete()));
 		assertEquals(false, (obj.isEmpty()));
 	}
 
@@ -105,9 +104,9 @@ public class TestCircularQueue {
 	@Test
 	public void testIsFullPositive() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
-		obj.add(5);
-		obj.add(1000);
+		assertEquals(true, (obj.add(1)));
+		assertEquals(true, (obj.add(5)));
+		assertEquals(true, (obj.add(1000)));
 		assertEquals(true, (obj.isFull()));
 	}
 
@@ -117,8 +116,8 @@ public class TestCircularQueue {
 	@Test
 	public void testIsFullNegative() {
 		CircularQueue obj = new CircularQueue(3);
-		obj.add(1);
-		obj.add(5);
+		assertEquals(true, (obj.add(1)));
+		assertEquals(true, (obj.add(5)));
 		assertEquals(false, (obj.isFull()));
 	}
 }
