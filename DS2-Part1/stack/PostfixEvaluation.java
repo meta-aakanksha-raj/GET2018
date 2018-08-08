@@ -32,8 +32,8 @@ public class PostfixEvaluation {
 					intValues.push(Integer.parseInt(expression));
 				}
 			} catch (Exception e) {
-				int firstValue = intValues.pop();
 				int secondValue = intValues.pop();
+				int firstValue = intValues.pop();
 				int intermediateExpression;
 				switch (expression) {
 				case "+":
