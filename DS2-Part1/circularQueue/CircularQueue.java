@@ -1,7 +1,10 @@
+/**
+ * 
+ */
 package circularQueue;
 
 /**
- * This class implements circular queue using array
+ * To implement the functionality of circular queue like add, delete, checking full and empty
  *
  */
 public class CircularQueue implements Queue {
@@ -14,93 +17,72 @@ public class CircularQueue implements Queue {
 		array = new int[capacity];
 		this.capacity = capacity;
 	}
-
-	/**
-	 * To add element to queue(enqueue)
+	
+	/* (non-Javadoc)
+	 * @see circularQueue.Queue#add(int)
 	 */
 	@Override
 	public boolean add(int element) {
-		if(isEmpty()) {
+		boolean flag = false;
+		if (rear == -1 && front == -1) {
 			array[++rear] = element;
 			front++;
-			return true;
+			flag = true;
+		} else {
+			int temporaryBack = (rear + 1) % capacity;
+			if (temporaryBack != front) {
+				array[temporaryBack] = element;
+				rear = temporaryBack;
+				flag = true;
+			} 
 		}
-		else if(!isFull()) {
-			rear++;
-			//if rear is reached for queue capacity and queue is still non empty then it will now reach at start
-			if (rear == front)
-				throw new AssertionError("Queue is full, cannot enqueue!!");
-			else
-				rear = rear % capacity;
-				array[rear] = element;
-				return true;
-		} 
-		else {
-			return false;
-		}	
+		return flag;
 	}
 
-	/**
-	 * To delete element from queue(dequeue)
+	/* (non-Javadoc)
+	 * @see circularQueue.Queue#delete()
 	 */
 	@Override
-	public int delete() {
-		int value = -1;
-		if (front == rear && front != -1) {
-			value = array[front];
-			front = -1;
-			rear = -1;
-		} else if (!isEmpty()) {
-			value = array[front];
-			front++;
-			// if front is reached at queue capacity and there are still queue is non empty then it will points to start
-			if (front % capacity == 0)
-				front = front % capacity;
-		} else
-			throw new AssertionError("Queue is empty, cannot dequeue!!");
-		return value;
+	public boolean delete() {
+		boolean flag = false;
+		if (rear < 0 && front < 0) {
+			System.out.println("The Que is Empty");
+		} else {
+			int temporaryFront = (front + 1) % capacity;
+			if (temporaryFront == (rear+1) % capacity) {
+				front=-1;
+				rear=-1;
+				flag = true;
+			} else if( temporaryFront != (rear + 1)%capacity ){
+				front=temporaryFront;
+				flag = true;
+			}
+		}
+		return flag;
 	}
 
-	/**
-	 * To check if queue is empty or not
+	/* (non-Javadoc)
+	 * @see circularQueue.Queue#isEmpty()
 	 */
 	@Override
 	public boolean isEmpty() {
-		if (front < 0) {
+		if (front < 0 && rear < 0) {
 			return true;
 		}
 		return false;
-
 	}
 
-	/**
-	 * To check if queue is full
+	/* (non-Javadoc)
+	 * @see circularQueue.Queue#isFull()
 	 */
 	@Override
 	public boolean isFull() {
-		if (rear == capacity - 1 && front == 0) {
+		if ((rear + 1) % capacity == front) {
 			return true;
 		}
 		return false;
 	}
 
-	/**
-	 * To print values
-	 */
-	public void display() {
-		System.out.print("\nArray = ");
-		if (!isEmpty()) {
-			for (int i = front; i <= rear; i++) {
-				System.out.print(array[i] + " ");
-			}
-			System.out.println();
-		}
-	}
-	
-	/**
-	 * Main class to get the input and check it
-	 * @param args
-	 */
 	public static void main(String args[]) {
 		CircularQueue obj = new CircularQueue(3);
 		System.out.println(obj.add(1));
