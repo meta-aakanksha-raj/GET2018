@@ -29,7 +29,7 @@ public class TestPriorityQueue {
 	}
 
 	@Test(expected = AssertionError.class)
-	public void PriorityQueueDequeueWhenQueueIsEmpty() {
+	public void testPriorityQueueDequeueWhenQueueIsEmpty() {
 		assertTrue(queue.enqueue(new Job(3, 4)));
 		assertEquals(3, queue.dequeue().getValue());
 		queue.dequeue();
