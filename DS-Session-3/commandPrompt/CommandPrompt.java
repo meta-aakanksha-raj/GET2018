@@ -11,7 +11,7 @@ public class CommandPrompt {
 
 	//Constructor
 	public CommandPrompt() {
-		ROOTNODE = new Directory("E>", null, "E:\\");
+		ROOTNODE = new Directory("R>", null, "E:\\");
 		this.currentPath = ROOTNODE.getPath();
 		currentNode = ROOTNODE;
 	}
