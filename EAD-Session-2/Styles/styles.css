@@ -1,7 +1,11 @@
-
+html {
+	height=100%;
+}
 body {
+	height=100%;
 	margin: 0;
 	font-family: Arial;
+	background-color: rgb(255,255,255);
 	}
 
 .topnav {
@@ -17,7 +21,7 @@ body {
 	padding: 16px;
 	text-decoration: none;
 	font-size: 17px;
-	}
+	} 
 .topnav a:hover {
 	background-color: rgb(221, 221, 221);
 	color: blue;
@@ -26,10 +30,6 @@ body {
 .topnav a.active {
 	background-color: rgb(255, 97, 100);
 	color: white;
-	}
-
-.back-layout {
-	background-color: rgb(135, 206, 250);
 	}
 	
 img {
@@ -44,7 +44,7 @@ input {
 	padding : 5px;	
 }
 
-.submission a:hover {
-	background-color: rgb(221, 221, 221);
+.button1:hover {
+	background-color: rgb(255, 97, 100);
 	color: blue;
 }

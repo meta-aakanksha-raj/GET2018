@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<title>Sign In</title>
+		<script src="Javascripts/ValidationScript.js"></script>
 		<link rel="stylesheet" href="Styles/styles.css">
+		<link rel="stylesheet" href="Styles/styleSignIn.css">
+
 	</head>
 
 	<body>
@@ -25,20 +28,20 @@
 			</table>
 		</div>
 		<hr/>
-		<div class="back-layout">
 		<br/>
 		<br/>
 		<br/>
 		<br/>
 		<h1 align="center"> Sign In </h1>
-			<form>
+			<form id="SignInForm" action="Profile.html" method="post">
 				<table align="center">
 					<tr>
 						<td align="left">
 							Email
 						</td>
 						<td>
-							<input type="text"/>
+							<input type="email" id="email" placeholder="Enter your email-id" onblur="validateEmailSignIn()">
+							<span id = "errorEmail">Email is invalid.</span>
 						</td>
 					</tr>
 					<tr>
@@ -46,46 +49,30 @@
 							Password
 						</td>
 						<td>
-							<input type="text"/>
+							<input type="password" id="Password" placeholder="Enter your password" onblur="validatePasswordSignIn()">
+							<span id = "errorPassword">Invalid password.</span>
+						</td>
+					</tr>
+					<br/>
+					<tr align="left">
+						<td>
+							<br/>
+							<button type="button" class="submission">Forgot Password?</button>
 						</td>
 					</tr>
 					<br/>
 					<tr align="right">
-						<td>
-							<br/>
-							<a class="submission" href="Profile.html">LogIn</a>
-						</td>
+						<div>
+							<td>
+								<br/>
+								<button type="button" class="submission"  form="SignInForm" onclick="validateSignIn()" value="Submit"> Sign In </button>
+							</td>
+						</div>
 					</tr>
 				</table>
 			</form>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			</form>
-			<footer >
-				<p align="center">&copy;Copyright 2018-2019 | All Rights Reserved | Metacube Training</p>
-			</footer>
-		</div>
+		<footer >
+			<p align="center">&copy;Copyright 2018-2019 | All Rights Reserved | Metacube Training</p>
+		</footer>
 	</body>
 </html>
