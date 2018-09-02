@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/com/metacube/webService/soap/Triangle.java=UTF-8
+encoding//src/com/metacube/webService/soap/TriangleService.java=UTF-8
+encoding//src/com/metacube/webService/soap/TriangleServiceLocator.java=UTF-8
+encoding//src/com/metacube/webService/soap/TriangleSoapBindingStub.java=UTF-8
