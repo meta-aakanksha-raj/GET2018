@@ -27,6 +27,7 @@ public class ShowEmployee extends HttpServlet {
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
+		response.setContentType("html/text");
 
 		ShowEmployeeDaoImplementation object = new ShowEmployeeDaoImplementation();
 		List<Employees> resultList = object.getAll();
