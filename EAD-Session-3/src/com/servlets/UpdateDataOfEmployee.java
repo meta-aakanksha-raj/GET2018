@@ -18,18 +18,10 @@ public class UpdateDataOfEmployee extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public UpdateDataOfEmployee() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
@@ -50,16 +42,7 @@ public class UpdateDataOfEmployee extends HttpServlet {
 
 		out.println("<a href = 'index.html'>Home</a>");
 
-		out.println("</body></hrml>");
+		out.println("</body></html>");
 		System.out.println("data has been updtaed: " + isDataUpdated);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 }

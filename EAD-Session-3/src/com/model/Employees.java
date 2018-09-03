@@ -60,18 +60,18 @@ public class Employees {
 		}
 
 		/*
-		 * Check if o is an instance of Complex or not "null instanceof [type]"
+		 * Check if o is an instance of Complex or not "null instanceOf [type]"
 		 * also returns false
 		 */
 		if (!(o instanceof Employees)) {
 			return false;
 		}
 
-		// typecast o to Complex so that we can compare data members
+		// typeCast o to Complex so that we can compare data members
 		Employees c = (Employees) o;
 
 		// Compare the data members and return accordingly
-		return (this.getEmail().compareTo(c.getEmail()) == 0);
+		return (this.getEmail().compareToIgnoreCase(c.getEmail()) == 0);
 	}
 
 	@Override

@@ -18,7 +18,6 @@ public class SearchEmployeeDaoImplementation implements DAO<Employees> {
 
 	@Override
 	public List<Employees> getAll() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -71,7 +70,6 @@ public class SearchEmployeeDaoImplementation implements DAO<Employees> {
 
 	@Override
 	public boolean add(Employees t) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -118,14 +116,13 @@ public class SearchEmployeeDaoImplementation implements DAO<Employees> {
 	public boolean addToList(ResultSet rsetOptional) {
 		boolean flag = false;
 		try {
-			while (rsetOptional.next()) { // Move the cursor to the next row,
-											// return false if no more row
+			 // Move the cursor to the next row, return false if no more row
+			while (rsetOptional.next()) {
 				String firstName = rsetOptional.getString("firstName");
 				String lastName = rsetOptional.getString("lastName");
 				String email = rsetOptional.getString("email");
 				int age = rsetOptional.getInt("age");
-				Employees object = new Employees(firstName, lastName, email,
-						age);
+				Employees object = new Employees(firstName, lastName, email, age);
 				if (!employeeList.contains(object)) {
 					employeeList.add(object);
 				}

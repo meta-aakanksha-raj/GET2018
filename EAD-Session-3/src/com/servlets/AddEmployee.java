@@ -3,7 +3,6 @@ package com.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,22 +12,8 @@ import com.daoModelLayer.AddEmployeeDaoImplementation;
 import com.model.Employees;
 
 public class AddEmployee extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public AddEmployee() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -49,21 +34,12 @@ public class AddEmployee extends HttpServlet {
 		if (flag) {
 			out.println(" Employee Added Succesfully!");
 			out.println();
-		} else {
+		}
+		else {
 			out.println(" Employee Already Exists!");
 			out.println();
 		}
 		out.println("<a href = 'index.html'>Home</a>");
 		out.close();
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 }

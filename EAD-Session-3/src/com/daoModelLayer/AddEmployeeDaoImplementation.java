@@ -17,13 +17,11 @@ public class AddEmployeeDaoImplementation implements DAO<Employees> {
 
 	@Override
 	public List<Employees> getAll() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Employees> get(Employees emp) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -34,7 +32,6 @@ public class AddEmployeeDaoImplementation implements DAO<Employees> {
 	  */
 	@Override
 	public boolean add(Employees employee) {
-		// TODO Auto-generated method stub
 		boolean flagAdd = false;
 		try (
 				// Step 1: Allocate a database 'Connection' object

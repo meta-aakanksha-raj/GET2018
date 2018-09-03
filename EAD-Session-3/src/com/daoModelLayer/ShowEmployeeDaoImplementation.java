@@ -45,13 +45,11 @@ public class ShowEmployeeDaoImplementation implements DAO<Employees> {
 
 	@Override
 	public List<Employees> get(Employees emp) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public boolean add(Employees t) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

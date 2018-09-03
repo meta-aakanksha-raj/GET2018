@@ -18,14 +18,6 @@ public class SearchEmployee extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public SearchEmployee() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
@@ -41,19 +33,10 @@ public class SearchEmployee extends HttpServlet {
 			SearchEmployeeDaoImplementation object = new SearchEmployeeDaoImplementation();
 			List<Employees> resultList = object.get(employeeToBeSearched);
 			display(resultList, response);
-		} else {
+		}
+		else {
 			out.println("Search Field Is Empty!!");
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 	public void display(List<Employees> resultList, HttpServletResponse response) {
@@ -76,19 +59,16 @@ public class SearchEmployee extends HttpServlet {
 
 	public Employees filterFunction(String nameArray[]) {
 		Employees employeeToBeSearched = null;
-		if (nameArray.length == 2) {
-			employeeToBeSearched = new Employees(nameArray[0], nameArray[1], "", -1);
-		}
-		
-		else if (nameArray.length == 1) {
+
+		if (nameArray.length == 1) {
 			employeeToBeSearched = new Employees(nameArray[0], "", "", -1);
 		}
-		
-		else if (nameArray.length > 2) {
+
+		else if (nameArray.length >= 2) {
 			employeeToBeSearched = new Employees(nameArray[0],
 					nameArray[nameArray.length - 1], "", -1);
 		}
-		
+
 		else {
 			employeeToBeSearched = new Employees("", "", "", -1);
 		}
