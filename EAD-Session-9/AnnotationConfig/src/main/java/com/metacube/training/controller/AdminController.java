@@ -186,7 +186,6 @@ public class AdminController {
 
 	@RequestMapping(path = "/employee", method = RequestMethod.GET)
 	public String goToEmployeePage(Model model) {
-		System.out.println("CCCCCCCCCCCCCCCCCCCCC");
 		model.addAttribute("employee", new Employee());
 		model.addAttribute("jobs", jobTitleService.getAllJobTitle());
 		model.addAttribute("projects", projectService.getAllProjects());
@@ -198,9 +197,8 @@ public class AdminController {
 
 	@RequestMapping(path = "/employee", method = RequestMethod.POST)
 	public String addEmployee(@ModelAttribute("employee") Employee employee) {
-		System.out.println("DDDDDDDDDDDDDDDDDDDDD");
 		employeeService.createEmployee(employee);
 		employeeService.addJobDetails(employee);
-		return "admin/skills";
+		return "/admin/dashboard";
 	}
 }
