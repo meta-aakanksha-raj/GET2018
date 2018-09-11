@@ -77,25 +77,38 @@ CREATE TABLE job_details(
 
 
 
-SELECT * FROM employee;
+
 INSERT INTO `employee_portal`.`employee` (`emp_code`, `first_name`, `last_name`, `dob`, `gender`, `primary_contact_number`, `secondary_contact_number`, `email_id`, `password`, `enabled`) VALUES ('E18/0000', 'dummy', 'dummy', '1997-08-12', 'M', '123', '123', 'a@b.com', 'abcd', true);
 INSERT INTO `employee_portal`.`employee` (`emp_code`, `first_name`, `last_name`, `dob`, `gender`, `primary_contact_number`, `secondary_contact_number`, `email_id`, `password`, `enabled`) VALUES ('E18/0001', 'dummy1', 'dummy1', '1997-08-12', 'F', '123', '123', 'a2@bb.com', 'abcd', true);
+INSERT INTO `employee_portal`.`employee` (`emp_code`, `first_name`, `last_name`, `dob`, `gender`, `primary_contact_number`, `secondary_contact_number`, `email_id`, `password`, `enabled`) VALUES ('E18/0002', 'dummy2', 'dummy2', '1997-08-12', 'M', '123', '123', 'ab@ab.com', 'abcd', true);
+INSERT INTO `employee_portal`.`employee` (`emp_code`, `first_name`, `last_name`, `dob`, `gender`, `primary_contact_number`, `secondary_contact_number`, `email_id`, `password`, `enabled`) VALUES ('E18/0003', 'dummy3', 'dummy3', '1997-08-19', 'F', '123', '123', 'abc@abc.com', 'abcd', true);
+INSERT INTO `employee_portal`.`employee` (`emp_code`, `first_name`, `last_name`, `dob`, `gender`, `primary_contact_number`, `secondary_contact_number`, `email_id`, `password`, `enabled`) VALUES ('E18/0004', 'dummy4', 'dummy4', '1997-08-2', 'M', '123', '123', 'b@b.com', 'abcd', true);
+INSERT INTO `employee_portal`.`employee` (`emp_code`, `first_name`, `last_name`, `dob`, `gender`, `primary_contact_number`, `secondary_contact_number`, `email_id`, `password`, `enabled`) VALUES ('E18/0005', 'dummy5', 'dummy5', '1997-08-12', 'F', '123', '123', 'bb@bb.com', 'abcd', true);
+SELECT * FROM employee;
 
 
 
-SELECT * FROM job_title_master;
 INSERT INTO `employee_portal`.`job_title_master` (`job_id`, `job_title`) VALUES (1, 'GET-Trainee');
 INSERT INTO `employee_portal`.`job_title_master` (`job_id`, `job_title`) VALUES (2, 'Team Leader');
 INSERT INTO `employee_portal`.`job_title_master` (`job_id`, `job_title`) VALUES (3, 'Manager');
+SELECT * FROM job_title_master;
 
 
-SELECT *FROM project;
 INSERT INTO `employee_portal`.`project` (`project_id`, `project_name`, `project_description`, `start_date`, `end_date`) VALUES (1, 'Training', 'abc', '2018-12-12', '2019-12-12');
+INSERT INTO `employee_portal`.`project` (`project_id`, `project_name`, `project_description`, `start_date`, `end_date`) VALUES (2, 'Testing', 'abc', '2018-12-12', '2019-12-12');
+INSERT INTO `employee_portal`.`project` (`project_id`, `project_name`, `project_description`, `start_date`, `end_date`) VALUES (3, 'Training1', 'abc', '2018-12-12', '2019-12-12');
+INSERT INTO `employee_portal`.`project` (`project_id`, `project_name`, `project_description`, `start_date`, `end_date`) VALUES (4, 'Training2', 'abc', '2018-12-12', '2019-12-12');
+INSERT INTO `employee_portal`.`project` (`project_id`, `project_name`, `project_description`, `start_date`, `end_date`) VALUES (5, 'Training3', 'abc', '2018-12-12', '2019-12-12');
+SELECT *FROM project;
 
-select * from job_details;
+
 INSERT INTO `employee_portal`.`job_details` (`job_detail_id`, `emp_code`, `job_code`, `curr_proj_id`) VALUES (1, 'E18/0000', 2, 1);
 INSERT INTO `employee_portal`.`job_details` (`job_detail_id`, `emp_code`, `job_code`, `curr_proj_id`) VALUES (2, 'E18/0000', 3, 1);
-INSERT INTO `employee_portal`.`job_details` (`job_detail_id`, `emp_code`, `job_code`, `reproting_mgr`, `team_lead`, `curr_proj_id`) VALUES (3, 'E18/0001', 1, 'E18/0000', 'E18/0000', 1);
+INSERT INTO `employee_portal`.`job_details` (`job_detail_id`, `emp_code`, `job_code`, `reproting_mgr`, `team_lead`, `curr_proj_id`) VALUES (3, 'E18/0001', 1, 'E18/0001', 'E18/0002', 2);
+INSERT INTO `employee_portal`.`job_details` (`job_detail_id`, `emp_code`, `job_code`, `reproting_mgr`, `team_lead`, `curr_proj_id`) VALUES (4, 'E18/0001', 2, 'E18/0002', 'E18/0000', 2);
+INSERT INTO `employee_portal`.`job_details` (`job_detail_id`, `emp_code`, `job_code`, `reproting_mgr`, `team_lead`, `curr_proj_id`) VALUES (5, 'E18/0001', 1, 'E18/0000', 'E18/0001', 2);
+select * from job_details;
+
 
 drop database employee_portal;
 
