@@ -15,14 +15,14 @@
             <tr>
                 <th>Id</th>
                 <th>job title</th>
-                <th>Edit</th>
-                <th>Delete</th>
+ <!--                <th>Edit</th>
+                <th>Delete</th> -->
             </tr>
             <tr th:each="job : ${jobs}">
                 <td th:text="${job.id}">Id</td>
                 <td th:text="${job.jobTitle}">Job Title</td>
-<!--                 <td><a th:href="${'jobs/edit?id=' + job.id}" class="btn btn-default">Edit</a></td>
- -->                <td><a th:href="${'jobs/delete?id=' + job.id}" class="btn btn-danger">Delete</a></td>
+ <!--                <td><a th:href="${'jobs/edit?id=' + job.id}" class="btn btn-default">Edit</a></td>
+                <td><a th:href="${'jobs/delete?id=' + job.id}" class="btn btn-danger">Delete</a></td> -->
             </tr>
         </table>
     </div>

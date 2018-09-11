@@ -191,7 +191,6 @@ public class AdminController {
 		model.addAttribute("projects", projectService.getAllProjects());
 		model.addAttribute("teamLeaders", employeeService.getTeamLeaders());
 		model.addAttribute("managers", employeeService.getManagers());
-		System.out.println(employeeService.getManagers().get(0).getFirstName());
 		return "admin/addEmployee";
 	}
 
@@ -200,5 +199,22 @@ public class AdminController {
 		employeeService.createEmployee(employee);
 		employeeService.addJobDetails(employee);
 		return "/admin/dashboard";
+	}
+	
+	@RequestMapping(path = "/searchEmployee", method = RequestMethod.GET)
+	public String search(Model model) {
+		return "admin/search";
+	}
+
+	@RequestMapping(path = "/searchEmployee", method = RequestMethod.POST)
+	public String search(@RequestParam(name = "search") String searchString, Model model) {
+		try {
+			Employee employee = employeeService.getEmployeeByIdString(searchString);
+
+			model.addAttribute("employees", employee);
+			return "admin/profile";
+		} catch (Exception e) {
+			return "employee/error2";
+		}
 	}
 }

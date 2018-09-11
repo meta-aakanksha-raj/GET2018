@@ -39,8 +39,8 @@ CREATE TABLE employee_skill(
  emp_skill_id INT PRIMARY KEY,
  emp_code VARCHAR(11) NOT NULL,
  skill_code INT NOT NULL,
- FOREIGN KEY (emp_code)  REFERENCES employee(emp_code),
- FOREIGN KEY (skill_code)  REFERENCES skill_master(skill_id)
+ FOREIGN KEY (emp_code)  REFERENCES employee(emp_code) ON UPDATE CASCADE ON DELETE CASCADE,
+ FOREIGN KEY (skill_code)  REFERENCES skill_master(skill_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE project(
@@ -57,7 +57,7 @@ CREATE TABLE address(
  emp_code VARCHAR(11) NOT NULL,
  add_line_1 VARCHAR(100) NOT NULL,
  add_line_2 VARCHAR(100),
- FOREIGN KEY (emp_code) REFERENCES employee(emp_code)
+ FOREIGN KEY (emp_code) REFERENCES employee(emp_code) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
@@ -68,11 +68,11 @@ CREATE TABLE job_details(
   reproting_mgr VARCHAR(11),
   team_lead VARCHAR(11),
   curr_proj_id INT,
-  FOREIGN KEY (emp_code) REFERENCES employee(emp_code),
-  FOREIGN KEY (job_code) REFERENCES job_title_master(job_id),
-  FOREIGN KEY (reproting_mgr) REFERENCES Employee(emp_code),
-  FOREIGN KEY (team_lead) REFERENCES Employee(emp_code),
-  FOREIGN KEY (curr_proj_id) REFERENCES project(project_id)
+  FOREIGN KEY (emp_code) REFERENCES employee(emp_code) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (job_code) REFERENCES job_title_master(job_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (reproting_mgr) REFERENCES Employee(emp_code) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (team_lead) REFERENCES Employee(emp_code) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (curr_proj_id) REFERENCES project(project_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
@@ -98,3 +98,4 @@ INSERT INTO `employee_portal`.`job_details` (`job_detail_id`, `emp_code`, `job_c
 INSERT INTO `employee_portal`.`job_details` (`job_detail_id`, `emp_code`, `job_code`, `reproting_mgr`, `team_lead`, `curr_proj_id`) VALUES (3, 'E18/0001', 1, 'E18/0000', 'E18/0000', 1);
 
 drop database employee_portal;
+
