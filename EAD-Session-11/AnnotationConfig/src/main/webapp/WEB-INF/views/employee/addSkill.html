@@ -11,7 +11,7 @@
 	
 		<form  th:action="@{./addSkill}" method="post">
              <label>Skill</label>
-                  <select th:name="skills" multiple>
+                  <select th:name="skills" multiple required>
                      <option th:each="skill : ${skillList}"
                         th:value="${skill.id}"
                         th:utext="${skill.name}"/>
