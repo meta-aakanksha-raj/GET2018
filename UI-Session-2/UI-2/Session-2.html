@@ -33,11 +33,8 @@
 			<div id="cover_header">
 				<h1>Get the most fun weather app</h1>
 
-<!-- 					<a href="">Download</a>
-					<a href="">Features</a> -->
-
-					<input type = "button" id = "download2" class = "button2" onclick="download.html" value = "Download">
-					<input type = "button" id = "features2" class = "button2" onclick="features.html" value = "Features">
+				<input type = "button" id = "download_button" class = "buttons" onclick="download.html" value = "Download">
+				<input type = "button" id = "features_button" class = "buttons" onclick="features.html" value = "Features">
 
 			</div>
 
@@ -51,8 +48,8 @@
 	<main id="main">
 		<section id="features_section">
 			<div class="heading" id="perfect_features">
-					<h1>Perfect Features</h1>
-					<span>Only necessary</span>
+				<h1>Perfect Features</h1>
+				<span>Only necessary</span>
 			</div>
 
 			<div id="features">
@@ -134,11 +131,11 @@
 				</div>
 
 				<div class="mobiles">
-					<div>
+					<div class="mobile_pics">
 						<img src="images/screen03.png" alt="Rainy Phone Screen">					
 					</div>
 					<div class="mobile_parts">
-						<div class="mobile_pics">
+						<div >
 							<img src="images/rainy1.png" alt="Rainy">
 						</div>
 						<div>
@@ -163,24 +160,24 @@
 				<div class="review_parts">
 					<div>
 						<p>What art offers is space- a certain breathing room for the spirit.</p>
-						<span>John Updike</span>
+						<span class="writer">John Updike</span>
 					</div>
 
 					<div class="review_inner">
 						<p>We do not see nature with our eyes, but with our understandings and our hearts.</p>
-						<span>William Hazlitt</span>
+						<span class="writer">William Hazlitt</span>
 					</div>					
 				</div>	
 
 				<div class="review_parts">
 					<div>
 						<p>The only courage that matters is the kind that gets you from one moment to the next.</p>
-						<span>Mignon McLaughlin</span>
+						<span class="writer">Mignon McLaughlin</span>
 					</div>
 
 					<div class="review_inner">
 						<p>No man has a good enough memory to be a successful liar.</p>
-						<span>Abraham Lincoln</span>
+						<span class="writer">Abraham Lincoln</span>
 					</div>						
 				</div>
 			</div>
@@ -208,29 +205,31 @@
 
 
 	<footer id="footer">
-		<div class="header_footer">
-			<div id="header_logo">
-				<img src="images/footer-logo.png" alt="Logo Title">
-			</div>
-			<div id="header_menu">
-				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">Features</a></li>
-					<li><a href="">Reviews</a></li>
-					<li><a href="">Download</a></li>
-				</ul>
-			</div>
+		<div id="footers">
+			<div class="header_footer footer_part">
+				<div id="header_logo">
+					<img src="images/footer-logo.png" alt="Logo Title">
+				</div>
+				<div id="header_menu">
+					<ul>
+						<li><a href="">Home</a></li>
+						<li><a href="">Features</a></li>
+						<li><a href="">Reviews</a></li>
+						<li><a href="">Download</a></li>
+					</ul>
+				</div>
 
-			<div id="header_icons">
-				<img src="images/facebook.png" alt="facebook" width="20px">
-				<img src="images/instagram.png" alt="instagram" width="20px">
-				<img src="images/google+.png" alt="google+" width="20px">
+				<div id="header_icons">
+					<img src="images/facebook.png" alt="facebook" width="20px">
+					<img src="images/instagram.png" alt="instagram" width="20px">
+					<img src="images/google+.png" alt="google+" width="20px">
+				</div>
 			</div>
+			<div id="footer_span" class="footer_part">
+				<hr>
+				<span id="right">All Rights Reserved</span>
+			</div>	
 		</div>
-		<div id="footer_span">
-			<hr>
-			<span>All Rights Reserved</span>
-		</div>	
 	</footer>
 
 </body>
