@@ -41,12 +41,14 @@
 			<h3 th:text="${employees.emailId}">email id</h3>
 		</td>
 	</tr>
-	<a th:href="${'./edit?empCode=' + employees.empCode}" class="btn btn-default">Edit</a>
+	
 
 </table>
 </form>
+
 </div>
 <br>
 <a th:href="@{./back}">Back</a>
+<a th:href="${'./edit?empCode=' + employees.empCode}" class="btn btn-default">Edit</a>
 </body>
 </html>

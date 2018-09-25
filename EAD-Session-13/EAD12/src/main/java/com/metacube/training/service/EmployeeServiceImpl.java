@@ -127,7 +127,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		employeeAndJobDetails.setEmpCode(empCode);
 		Employee employeeModel = getEmployeeObjectByTransferObject(employeeAndJobDetails);
-		
+ 
 		return (Employee) employeeRepository.findOne(empCode);
 	}
 	
@@ -166,7 +166,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean updateEmployee(Employee employee) {
-		employeeRepository.save(employee);
+		Employee employeeToUpdate = getEmployeeByIdString(employee.getEmpCode());
+		employeeToUpdate.setFirstName(employee.getFirstName());
+		employeeToUpdate.setLastName(employee.getLastName());
+		employeeToUpdate.setEmailId(employee.getEmailId());
+		employeeToUpdate.setPrimaryContactNumber(employee.getPrimaryContactNumber());
+		employeeRepository.save(employeeToUpdate);
 		return true;
 	}
 }

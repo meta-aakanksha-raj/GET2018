@@ -117,6 +117,7 @@ public class EmployeeController {
 	@RequestMapping(path = "/edit", method = RequestMethod.GET)
 	public String editEmployee(Model model,@RequestParam("empCode") String empCode) {
 		Employee employeeToEdit = employeeService.getEmployeeByIdString(empCode);
+		System.out.println(employeeToEdit.getDob());
 		model.addAttribute("employees", employeeToEdit);
 		return "employee/editEmployee";
 	}
