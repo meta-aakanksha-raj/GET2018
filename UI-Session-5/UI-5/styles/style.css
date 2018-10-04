@@ -1,0 +1,15 @@
+#page_heading {
+	font-family: "Playfair Display";
+}
+
+#jumbotron_para {
+	font-size-20px;
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display";
+}
+
+.round_button {
+    border-radius: 30px;
+}
