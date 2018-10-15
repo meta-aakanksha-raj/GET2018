@@ -1,1 +1,3 @@
-angular.module("userApp",["userList"]);
+angular.module('userApp',[
+    'userList'
+]);
