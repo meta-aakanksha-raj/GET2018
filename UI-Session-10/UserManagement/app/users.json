@@ -3,19 +3,19 @@
     {
       "id": 1,
       "name": "Kritika",
-      "phone": "7788994455",
+      "phone": 7788994455,
       "location": "Jaipur"
     },
     {
       "id": 2,
       "name": "Kajal",
-      "phone": "7788994455",
+      "phone": 7788994455,
       "location": "Mumbai"
     },
     {
       "id": 3,
       "name": "Medha",
-      "phone": "7788994455",
+      "phone": 7788994455,
       "location": "Mumbai"
     },
     {
