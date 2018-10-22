@@ -1,0 +1,20 @@
+.header{
+	display:flex;
+	flex-direction:row;
+	padding:20px;
+}
+
+.header div i{
+	padding:10px 30px 10px 30px;
+}
+
+.card{
+    position: relative;
+}
+
+.badge{
+    position: absolute;
+    top:8px;
+    right:16px;
+    font-size:18px;
+}
