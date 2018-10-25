@@ -18,3 +18,7 @@
     right:16px;
     font-size:18px;
 }
+
+.list-group {
+	text-decoration: none;
+}

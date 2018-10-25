@@ -1,4 +1,7 @@
 angular.module('productApp',[
 	'ngRoute',
-    'productList'
+    'productList',
+    'cartList',
+    'checkOut',
+    'thankYou'
 ]);

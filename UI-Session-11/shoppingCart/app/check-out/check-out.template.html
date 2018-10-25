@@ -1,0 +1,50 @@
+ 
+<section  id="checkoutlist">   
+	<div class="row py-2 mb-2 flex-wrap  justify-content-between align-items-end">
+		<div class="col-md-6 display-3 px-0">Shipping</div>
+    </div>
+     <div class="row mt-3">
+    	<div class="col-md-12 d-flex flex-wrap justify-content-between">
+    		<div class="col-md-5 border" ng-init>
+	    		 <form action="./#!/cart" method="post">
+	    		 	<div class="col-md-12 mt-3">
+	    		 		<label>Name</label>
+	    		 		<input class="col-md-12" type="text" required ng-model="user.name">
+	    		 	</div>
+	    		 	<div class="col-md-12 mt-3">
+	    		 		<label>Address</label>
+	    		 		<input class="col-md-12" type="text" required ng-model="user.address">
+	    		 	</div>
+	    		 	<div class="col-md-12 mt-3">
+	    		 		<label>City</label>
+	    		 		<input class="col-md-12" type="text" required ng-model="user.city">
+	    		 	</div>
+	    		 	<div class="col-md-12 mt-3">
+	    		 		<label>Contact Number</label>
+	    		 		<input class="col-md-12" type="number" required ng-model="user.number">
+	    		 	</div>
+	    		 	<div class="mt-3">
+	    		 		<div class="col-md-12  p-3"><a href="./#!/thankyou/true"><button class="btn-sm btn-success display-5 p-2" type="submit" ng-click="placeTheOrder(user)">Place Order</button></a></div>
+	    		 	</div>
+	    		 </form>
+	    	</div>
+	    	<div class="col-md-6 border">
+	    		 <h2>Order Summary</h2>
+	    		 <p>You have {{totalItemsToBePlaced}} items in your the shopping cart.</p>
+	    		 <div class="row-md-10 mt-3 border-top" ng-repeat="item in $ctrl.itemInTheCart">
+	    		 	<div class="col-md-12 d-flex flex-wrap justify-content-center" ng-if="item.quantity > 0">
+	    		 		<span class="col-md-8 d-flex flex-wrap justify-content-start">{{item.quantity}} X {{item.name}}</span>
+	    		 		<span class="col-md-4 d-flex flex-wrap justify-content-end">{{item.total}}</span>
+	    		 	</div>
+	    		 </div>
+	    		 <div class="row-md-10 mt-3 border-top">
+	    		 	<div class="col-md-12 d-flex flex-wrap justify-content-center">
+	    		 		<span class="col-md-8 d-flex flex-wrap justify-content-start">Total</span>
+	    		 		<span class="col-md-4 d-flex flex-wrap justify-content-end">{{totalAmount}}</span>
+	    		 	</div>
+	    		 </div>
+	    	</div>
+	    </div>
+    </div>
+</section>
+

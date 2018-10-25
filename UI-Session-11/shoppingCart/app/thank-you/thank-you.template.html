@@ -1,0 +1,16 @@
+ <div class="row py-2 mb-2 flex-wrap justify-content-between align-items-end" ng-if="show == 'true' ">
+        <div class="col-md-12 display-3 px-0">Thank You</div>
+        <div class="col-md-12 px-0 display-5">
+       			Your order will be delivered in next 2-3 working days.	<!--  <button class="btn" data-toggle="modal" data-target="#modalAddProduct">Add product</button> -->
+        </div>
+</div>
+<div class="col-md-10">
+	 <h2>Your Past Orders</h2>
+	 <div class="row-md-10 mt-3 border-top" ng-repeat="item in $ctrl.orders">
+	 	<div class="col-md-12 d-flex flex-wrap justify-content-center">
+	 		<span class="col-md-4 d-flex flex-wrap justify-content-start">{{item.name}}</span>
+	 		<span class="col-md-4 d-flex flex-wrap justify-content-center">{{item.date}}</span>
+	 		<a class="col-md-4 d-flex flex-wrap justify-content-end" href="#">View Details</a>
+	 	</div>
+	 </div>
+</div>

@@ -1,39 +1,53 @@
 <html ng-app="productApp">
-    <head>
-        <link rel="stylesheet" href="stylesheet/style.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<head>
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
-        <script src="app.module.js"></script>
-         <script src="app.config.js"></script>
-        <script src="product-list/product-list.module.js"></script>
-        <script src="product-list/product-list.component.js"></script>
-        
-    </head>
-    <body>
-        <div class="container">
-            <div class="header py-1 mb-4 flex-wrap justify-content-between align-items-center">
-                <div class="d-flex flex-wrap">
-                    <i class="fa fa-leaf" aria-hidden="true"></i>
-                    <div class="col-md-4">
-                        <a href="./#!/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-warning">{{cartItems}}</span></a>
-                    </div>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="product-list/product-list.module.js"></script>
+    <script src="product-list/product-list.component.js"></script>
+    <script src="cart-list/cart-list.module.js"></script>
+    <script src="cart-list/cart-list.component.js"></script>
+    <script src="check-out/check-out.module.js"></script>
+    <script src="check-out/check-out.component.js"></script>
+    <script src="thank-you/thank-you.module.js"></script>
+    <script src="thank-you/thank-you.component.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header py-1 mb-4 flex-wrap justify-content-between align-items-center">
+            <div class="d-flex flex-wrap">
+                <i class="fa fa-leaf" aria-hidden="true"></i>
+                <div class="col-md-4">
+                    <a href="./#!/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-warning">{{cartItems}}</span></a>
                 </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center">
                 <div>
                     John Doe
                 </div>
-            </div>  
-            
-            <div ng-view></div>
-        </div>
-    </body>
+                <div class="dropdown p-2"><a class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                     <li class="px-2"><a href="./#!/thankyou/false">My Orders</a></li>
+                     <li class="px-2"><a href="#">Log Out</a></li>
+                 </ul>
+             </div>
+         </div>
+     </div>  
+
+     <div ng-view></div>
+ </div>
+</body>
 </html>

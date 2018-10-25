@@ -1,7 +1,9 @@
-
-<div class="container">    
+<section id="products"> 
     <div class="row py-2 mb-2 flex-nowrap justify-content-between align-items-end">
         <div class="col-md-2 display-4 px-0">Products</div>
+        <div class="col-md-1 px-0">
+       <!--  <button class="btn" data-toggle="modal" data-target="#modalAddProduct">Add product</button> -->
+        </div>
     </div>
 
     <div class="row py-2 flex-nowrap mb-4">
@@ -15,10 +17,31 @@
 
 
     <div class="row my-2 justify-content-between">
-        <div class="col md-5">
+
+       <div class="col-md-3">
+            <ul class="list-group" ng-init="selectedCategory = 'all'">
+            <a href="" ng-click="SearchList=all">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'all'}" ng-click="selectedCategory = 'all'">All Categories</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'bread'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'bread'}" ng-click="selectedCategory = 'bread'">Bread</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'dairy'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'dairy'}" ng-click="selectedCategory = 'dairy'">Dairy</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'fruits'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'fruits'}" ng-click="selectedCategory = 'fruits'">Fruits</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'spices'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'spices'}" ng-click="selectedCategory = 'spices'">Seasonings and Spices</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'vegetables'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'vegetables'}" ng-click="selectedCategory = 'vegetables'">Vegetables</li>
+            </a>
+            </ul>
         </div>
-        <div class="col-md-10 d-flex flex-wrap mx-1 mb-3" >
-             <div class="card mx-1 px-0 col-md-5 mb-4" ng-repeat="product in $ctrl.products | filter:search">
+        <div class="col-md-8 d-flex flex-wrap mx-1 mb-3" >
+             <div class="card mx-1 px-0 col-md-5 mb-4" ng-repeat="product in $ctrl.products | filter:SearchList |filter:search">
                 
                 <img class="card-img-top" style="height:200px; width:100%;" src="../images/{{product.url}}" alt="Card image cap">
                 
@@ -38,5 +61,4 @@
              </div>
         </div>
     </div>
-</div>
-
+</section>   

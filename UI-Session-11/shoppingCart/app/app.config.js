@@ -8,6 +8,15 @@ angular.
         when('/products', {
           template: '<product-list></product-list>'
         }).
+        when('/cart', {
+          template: '<cart-list></cart-list>'
+        }).
+        when('/checkout', {
+          template: '<check-out></check-out>'
+        }).
+        when('/thankyou/:show', {
+           template: '<thank-you></thank-you>'
+        }).
         otherwise('/products');
     }
   ]);
