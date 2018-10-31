@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" href="styles/styles.css">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<script src="javascript/script.js"></script>
+	<script src="javascript/validation.js"></script>
+</head>
+<body>
+	<form method="post" id="contact_form" action="details.html" id = "contact_us">
+
+		<div id="form_container">
+			<div id="form_heading">
+				<h2>Contact Us Today!</h2>
+			</div>
+			<hr>
+
+			<div class="form_section">
+				<div class="form_field field_title">
+					First Name
+				</div>
+				<div class="form_field entry_field">
+					<div class="icon"> <i class="fa fa-user"></i></div>
+					<input class="input_field" type="text" id="firstName" name="firstName" placeholder="First Name">
+				</div>
+			</div>
+
+			<div class="form_section">
+				<div class="form_field field_title">
+					Last Name
+				</div>
+				<div class="form_field entry_field">
+					<div class="icon"> <i class="fa fa-user"></i></div>
+					<input class="input_field" type="text" id="lastName" name="lastName" placeholder="Last Name">
+				</div>
+			</div>
+
+			<div class="form_section">
+				<div class="form_field field_title">
+					Email
+				</div>
+				<div class="form_field entry_field">
+					<div class="icon"> <i class="fa fa-envelope"></i></div>
+					<input class="input_field" type="text" id="email" name="email" placeholder="E-Mail Address">
+				</div>
+			</div>
+
+			<div class="form_section">
+				<div class="form_field field_title">
+					Phone #
+				</div>
+				<div class="form_field entry_field">
+					<div class="icon"> <i class="fa fa-phone"></i></div>
+					<input class="input_field" type="text" id="phoneNumber" name="phoneNumber" placeholder="(845)555-1212">
+				</div>
+			</div>
+
+			<div class="form_section">
+				<div class="form_field field_title">
+					Address
+				</div>
+				<div class="form_field entry_field">
+					<div class="icon"> <i class="fa fa-home"></i></div>
+					<input class="input_field" type="text" id="address" name="address" placeholder="Address">
+				</div>
+			</div>
+
+			<div class="form_section">
+				<div class="form_field field_title">
+					City
+				</div>
+				<div class="form_field entry_field">
+					<div class="icon"> <i class="fa fa-home"></i></div>
+					<input class="input_field" type="text" id="city" name="city" placeholder="City">
+				</div>
+			</div>
+
+			<div class="form_section">
+				<div class="form_field field_title">
+					State
+				</div>
+				<div class="form_field entry_field">
+					<div class="icon"> <i class="fa fa-list"></i></div>
+                    <select class="input_field" id="state" name="state" onchange="stateChange(this.value)" >
+                        <option value="" selected disabled>Please select your state</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                    </select>
+				</div>
+			</div>
+
+			
+ 			<div class="form_section" id = "last_div">
+				<div class="form_field field_title"></div>
+				<div class="form_field entry_field">
+					<a href = "#" onclick = "return checkValidity()"><button id="submit_button"  type="submit">Send<i class="fa fa-paper-plane"></i></button>
+				</div>
+			</div>
+
+		</div>
+	</form>
+</body>
+</html>
