@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Harry Potter",
+      "contact": "7597083963",
+      "city": "Hogwarts"
+    },
+    {
+      "id": 2,
+      "name": "Shaktimaan",
+      "contact": "7597083963",
+      "city": "Kota"
+    },
+    {
+      "name": "Aryamaan",
+      "contact": "7412589630",
+      "city": "Banglore",
+      "id": 3
+    },
+    {
+      "name": "John Snow",
+      "contact": "4563210789",
+      "city": "Winterfell",
+      "id": 4
+    },
+    {
+      "name": "Van Helsing",
+      "contact": "7854123690",
+      "city": "Rome",
+      "id": 5
+    }
+  ]
+}
