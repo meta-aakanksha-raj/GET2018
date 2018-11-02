@@ -1,0 +1,30 @@
+
+  Add or Edit User!
+  <form>
+      <div>
+        <label>
+            Name
+        </label>
+        <input type="text" id="name" [(ngModel)]="user.name" name="name" required>
+      </div>
+      <div>
+        <label>
+            Contact
+        </label>
+        <input type="text" id="contact" [(ngModel)]="user.contact" name="contact" required>
+      </div>
+      <div>
+        <label>
+            City
+        </label>
+        <input type="text" id="city" [(ngModel)]="user.city" name="city" required>
+      </div>
+      <div>
+        <input type="text" id="id" style="display:none" [(ngModel)]="user.id" name="id">
+      </div>
+      <div>
+        <input type="button" value="Save User" class = "btn btn-primary" (click)="saveTheUser(user)">
+        <a href="./users">Cancel</a>
+      </div>
+  </form>
+
