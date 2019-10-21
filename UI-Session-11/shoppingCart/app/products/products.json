@@ -1,0 +1,231 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Cauliflower",
+      "price": "10",
+      "url": "cauliflower.jpg",
+      "quantity": 0,
+      "total": 0,
+      "category": "vegetables",
+      "itemAdded": "false"
+    },
+    {
+      "id": 2,
+      "name": "Tomato",
+      "price": "10",
+      "url": "tomato.png",
+      "quantity": 0,
+      "total": 0,
+      "category": "vegetables",
+      "itemAdded": "false"
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "price": "10",
+      "url": "apple.jpeg",
+      "quantity": 0,
+      "total": 0,
+      "category": "fruits",
+      "itemAdded": "false"
+    },
+    {
+      "id": 4,
+      "name": "Mango",
+      "price": "10",
+      "url": "mango.jpg",
+      "quantity": 0,
+      "total": 0,
+      "category": "fruits",
+      "itemAdded": "false"
+    },
+    {
+      "id": 5,
+      "name": "WaterMelon",
+      "price": "10",
+      "url": "water-melon.jpeg",
+      "quantity": 0,
+      "total": 0,
+      "category": "fruits",
+      "itemAdded": "false"
+    },
+    {
+      "id": 6,
+      "name": "Strawberry",
+      "price": "10",
+      "url": "strawberry.jpeg",
+      "quantity": 0,
+      "total": 0,
+      "category": "fruits",
+      "itemAdded": "false"
+    },
+    {
+      "id": 7,
+      "name": "Orange",
+      "price": "10",
+      "url": "orange.jpg",
+      "quantity": 0,
+      "total": 0,
+      "category": "fruits",
+      "itemAdded": "false"
+    },
+    {
+      "id": 8,
+      "name": "Bread",
+      "price": "10",
+      "url": "bread5.jpg",
+      "quantity": 0,
+      "total": 0,
+      "category": "bread",
+      "itemAdded": "false"
+    }
+  ],
+  "cartItems": [],
+  "order": [
+    {
+      "name": "Aakanksha Raj",
+      "address": "Sitapura",
+      "city": "Jaipur",
+      "number": 1234567890,
+      "date": "2018-10-23T13:09:48.736Z",
+      "items": [
+        {
+          "id": 1,
+          "name": "Cauliflower",
+          "price": "10",
+          "url": "cauliflower.jpg",
+          "quantity": 1,
+          "total": "10"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Chhoti",
+      "address": "Mental Asylum",
+      "city": "Jaipur",
+      "number": 420,
+      "date": "2018-10-23T13:11:02.183Z",
+      "items": [
+        {
+          "id": 4,
+          "name": "Mango",
+          "price": "10",
+          "url": "mango.jpg",
+          "quantity": 2,
+          "total": 20
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "TimTim",
+      "address": "asf",
+      "city": "aeg",
+      "number": 425,
+      "date": "2018-10-23T13:35:03.002Z",
+      "items": [
+        {
+          "id": 1,
+          "name": "Cauliflower",
+          "price": "10",
+          "url": "cauliflower.jpg",
+          "quantity": 1,
+          "total": "10"
+        },
+        {
+          "id": 2,
+          "name": "Tomato",
+          "price": "10",
+          "url": "tomato.png",
+          "quantity": 1,
+          "total": "10"
+        },
+        {
+          "id": 3,
+          "name": "Apple",
+          "price": "10",
+          "url": "apple.jpeg",
+          "quantity": 1,
+          "total": "10"
+        },
+        {
+          "id": 4,
+          "name": "Mango",
+          "price": "10",
+          "url": "mango.jpg",
+          "quantity": 1,
+          "total": "10"
+        },
+        {
+          "id": 5,
+          "name": "WaterMelon",
+          "price": "10",
+          "url": "water-melon.jpeg",
+          "quantity": 1,
+          "total": "10"
+        },
+        {
+          "id": 6,
+          "name": "Strawberry",
+          "price": "10",
+          "url": "strawberry.jpeg",
+          "quantity": 1,
+          "total": "10"
+        },
+        {
+          "id": 7,
+          "name": "Orange",
+          "price": "10",
+          "url": "orange.jpg",
+          "quantity": 1,
+          "total": "10"
+        },
+        {
+          "id": 8,
+          "name": "Bread",
+          "price": "10",
+          "url": "bread5.jpg",
+          "quantity": 1,
+          "total": "10"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Utkarsh",
+      "address": "nimbahida",
+      "city": "nimbahida",
+      "number": 420,
+      "date": "2018-10-24T10:27:59.459Z",
+      "items": [
+        {
+          "id": 1,
+          "name": "Cauliflower",
+          "price": "10",
+          "url": "cauliflower.jpg",
+          "quantity": 3,
+          "total": 30
+        },
+        {
+          "id": 2,
+          "name": "Tomato",
+          "price": "10",
+          "url": "tomato.png",
+          "quantity": 2,
+          "total": 20
+        },
+        {
+          "id": 8,
+          "name": "Bread",
+          "price": "10",
+          "url": "bread5.jpg",
+          "quantity": 1,
+          "total": "10"
+        }
+      ],
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<section id="products"> 
+    <div class="row py-2 mb-2 flex-nowrap justify-content-between align-items-end">
+        <div class="col-md-2 display-4 px-0">Products</div>
+        <div class="col-md-1 px-0">
+       <!--  <button class="btn" data-toggle="modal" data-target="#modalAddProduct">Add product</button> -->
+        </div>
+    </div>
+
+    <div class="row py-2 flex-nowrap mb-4">
+        <div class="input-group col-md-11 px-0">
+            <input type="text" class="form-control" placeholder="Search Products by Name.." ng-model="search.name">
+        </div>
+        <div class="col-md-1">
+            <button class="btn">Search</button>
+        </div>
+    </div>
+
+
+    <div class="row my-2 justify-content-between">
+
+       <div class="col-md-3">
+            <ul class="list-group" ng-init="selectedCategory = 'all'">
+            <a href="" ng-click="SearchList=all">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'all'}" ng-click="selectedCategory = 'all'">All Categories</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'bread'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'bread'}" ng-click="selectedCategory = 'bread'">Bread</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'dairy'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'dairy'}" ng-click="selectedCategory = 'dairy'">Dairy</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'fruits'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'fruits'}" ng-click="selectedCategory = 'fruits'">Fruits</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'spices'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'spices'}" ng-click="selectedCategory = 'spices'">Seasonings and Spices</li>
+            </a>
+            <a href="" ng-click="SearchList={category:'vegetables'}">
+            <li class="list-group-item" ng-class="{'active':selectedCategory === 'vegetables'}" ng-click="selectedCategory = 'vegetables'">Vegetables</li>
+            </a>
+            </ul>
+        </div>
+        <div class="col-md-8 d-flex flex-wrap mx-1 mb-3" >
+             <div class="card mx-1 px-0 col-md-5 mb-4" ng-repeat="product in $ctrl.products | filter:SearchList |filter:search">
+                
+                <img class="card-img-top" style="height:200px; width:100%;" src="../images/{{product.url}}" alt="Card image cap">
+                
+                <div class="card-body d-flex flex-column my-1 align-items-center">
+                    <h2 class="mb-2">{{product.name}}</h2>
+                    <p class="mt-3">$ {{product.price}}</p>
+                    <p class="mb-1" style="display:none;">{{product.id}}</p>
+                </div>
+                <div ng-if="product.itemAdded == 'false'">
+                    <button class="btn-lg btn-success btn-block" ng-click="addItem(product)">Add to Cart</button>
+                </div>
+                <div class="d-flex flex-wrap align-items-center bg-success" style="width:100%;color:white;font-style:bold;" ng-if="product.itemAdded == 'true'">
+                        <button class="btn-lg btn-success col-md-3" ng-click="decreaseItemQuantity(product)">-</button>
+                        <span class="col-md-6 px-5"> {{findProductQuantity(product.id)}} in cart </span>
+                        <button class="btn-lg btn-success col-md-3" ng-click="increaseItemQuantity(product)">+</button>
+                </div>
+             </div>
+        </div>
+    </div>
+</section>   
